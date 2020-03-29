@@ -1,4 +1,4 @@
-package com.example.seafood_crossing
+package io.mipha.seafood_crossing
 
 import io.flutter.embedding.android.FlutterActivity
 

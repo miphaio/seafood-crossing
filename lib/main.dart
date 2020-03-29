@@ -2,5 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:seafood_crossing/entry.dart';
 
 void main() {
-  runApp(SeafoodCrossingEntry());
+  final Widget entry = SeafoodCrossingEntry();
+  runApp(entry);
 }

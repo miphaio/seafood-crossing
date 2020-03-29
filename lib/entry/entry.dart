@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:seafood_crossing/collectable/index.dart';
+import 'package:seafood_crossing/entry/home.dart';
 
 class SeafoodCrossingEntry extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Seafood Crossing',
       theme: ThemeData(),
       routes: {
-        CollectableIndex.route: (context) => CollectableIndex(),
+        SeafoodCrossingHome.route: (context) => SeafoodCrossingHome(),
       },
-      initialRoute: CollectableIndex.route,
+      initialRoute: SeafoodCrossingHome.route,
     );
   }
 }

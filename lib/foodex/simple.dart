@@ -44,6 +44,7 @@ class _TestState extends State<Test> with TickerProviderStateMixin {
               ),
               expandedHeight: 100.0,
               pinned: true,
+              floating: true,
               elevation: 2.0,
               forceElevated: innerViewIsScrolled,
               bottom: TabBar(
@@ -58,35 +59,7 @@ class _TestState extends State<Test> with TickerProviderStateMixin {
         },
         body: TabBarView(
           children: <Widget>[
-            Container(
-              child: SliverStickyHeader(
-                header: Container(
-                  color: Colors.red,
-                  height: 48.0,
-                  padding: EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.centerLeft,
-                  child: this._buildFilter(),
-                ),
-                sliver: SliverGrid(
-                  gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    mainAxisSpacing: 10.0,
-                    crossAxisSpacing: 10.0,
-                    childAspectRatio: 4.0,
-                  ),
-                  delegate: new SliverChildBuilderDelegate(
-                    (BuildContext context, int index) {
-                      return new Container(
-                        alignment: Alignment.center,
-                        color: Colors.cyan[100 * (index % 9)],
-                        child: new Text('grid item $index'),
-                      );
-                    },
-                    childCount: 200,
-                  ),
-                ),
-              ),
-            ),
+            this._buildFilter(),
             Container(),
           ],
           controller: _tabController,

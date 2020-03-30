@@ -9,12 +9,15 @@
         "RUNPATH",
         "Schyler",
         "Stateful",
+        "Subtags",
         "cupertino",
         "fastfood",
+        "interps",
         "mipha",
         "vsync"
     ],
     "cSpell.enableFiletypes": [
-        "dart"
+        "dart",
+        "yaml"
     ]
 }

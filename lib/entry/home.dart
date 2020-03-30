@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:seafood_crossing/collectable/index.dart';
+import 'package:seafood_crossing/foodex/index.dart';
 
 class SeafoodCrossingHome extends StatefulWidget {
   static const String route = '/home';
@@ -22,8 +22,8 @@ class _SeafoodCrossingHomeState extends State<SeafoodCrossingHome> {
             title: Text('Travel'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.insert_emoticon),
-            title: Text('Collection'),
+            icon: Icon(Icons.fastfood),
+            title: Text('Foodex'),
           ),
         ],
         currentIndex: this._selectedIndex,
@@ -37,7 +37,7 @@ class _SeafoodCrossingHomeState extends State<SeafoodCrossingHome> {
       case 0:
         return Container();
       case 1:
-        return CollectableIndex();
+        return FoodexIndex();
     }
 
     return Container();

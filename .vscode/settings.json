@@ -3,10 +3,12 @@
         "APPICON",
         "ASSETCATALOG",
         "BITCODE",
+        "Foodex",
         "INFOPLIST",
         "Onone",
         "RUNPATH",
         "Stateful",
+        "fastfood",
         "mipha"
     ],
     "cSpell.enableFiletypes": [

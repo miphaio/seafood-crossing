@@ -1,4 +1,3 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class FoodexIndex extends StatefulWidget {
@@ -23,65 +22,23 @@ class _FoodexIndexState extends State<FoodexIndex>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            pinned: true,
-            floating: true,
-            expandedHeight: 125.0,
-            flexibleSpace: FlexibleSpaceBar(
-              title: const Text('Foodex'),
-              titlePadding: EdgeInsets.only(
-                left: 24,
-                bottom: 50,
-              ),
-              background: CachedNetworkImage(
-                imageUrl:
-                    'https://cdn.pixabay.com/photo/2019/04/16/10/01/seabass-4131337_1280.jpg',
-                fit: BoxFit.cover,
-              ),
-            ),
-            elevation: 2.0,
-            bottom: TabBar(
-              tabs: <Widget>[
-                Tab(text: "Fish"),
-                Tab(text: "Insect"),
-              ],
-              controller: this._tabController,
-            ),
-          ),
-          new SliverList(
-            delegate: SliverChildListDelegate([
-              new SliverFillRemaining(
-                child: TabBarView(
-                  controller: _tabController,
-                  children: <Widget>[
-                    Text("Tab 1"),
-                    Text("Tab 2"),
-                    Text("Tab 3"),
-                  ],
-                ),
-              ),
-            ]),
-          ),
+      appBar: AppBar(
+        title: Text('Foodex'),
+        bottom: TabBar(
+          controller: this._tabController,
+          tabs: <Widget>[
+            Tab(text: "Fish"),
+            Tab(text: "Insect"),
+          ],
+        ),
+      ),
+      body: TabBarView(
+        controller: _tabController,
+        children: <Widget>[
+          Text("Tab 1"),
+          Text("Tab 2"),
         ],
       ),
-    );
-  }
-
-  Widget _buildFilter() {
-    return Wrap(
-      spacing: 5.0,
-      children: <Widget>[
-        InputChip(
-          label: Text("Fish"),
-          onPressed: () {},
-        ),
-        InputChip(
-          label: Text("Insect"),
-          onPressed: () {},
-        ),
-      ],
     );
   }
 }

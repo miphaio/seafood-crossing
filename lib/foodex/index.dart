@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 
 class FoodexIndex extends StatelessWidget {
   @override
@@ -19,25 +20,35 @@ class FoodexIndex extends StatelessWidget {
               ),
             ),
           ),
-          SliverList(
-            delegate: SliverChildListDelegate([
-              Container(
-                child: Text("123"),
+          SliverStickyHeader(
+            header: Container(
+              height: 60.0,
+              color: Colors.lightBlue,
+              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'Header #0',
+                style: const TextStyle(color: Colors.white),
               ),
-            ]),
-          ),
-          SliverGrid(
-            gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              mainAxisSpacing: 10.0,
-              crossAxisSpacing: 10.0,
-              childAspectRatio: 4.0,
             ),
-            delegate: new SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                return new Container();
-              },
-              childCount: 20,
+            sliver: SliverGrid(
+              gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 3,
+                mainAxisSpacing: 10.0,
+                crossAxisSpacing: 10.0,
+                childAspectRatio: 4.0,
+              ),
+              delegate: new SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  //创建子widget
+                  return new Container(
+                    alignment: Alignment.center,
+                    color: Colors.cyan[100 * (index % 9)],
+                    child: new Text('grid item $index'),
+                  );
+                },
+                childCount: 20,
+              ),
             ),
           ),
         ],

@@ -31,8 +31,11 @@ class _FoodexIndexState extends State<FoodexIndex>
             floating: true,
             expandedHeight: 125.0,
             flexibleSpace: FlexibleSpaceBar(
-              collapseMode: CollapseMode.pin,
               title: const Text('Foodex'),
+              titlePadding: EdgeInsets.only(
+                left: 16,
+                bottom: 50,
+              ),
               background: CachedNetworkImage(
                 imageUrl:
                     'https://cdn.pixabay.com/photo/2019/04/16/10/01/seabass-4131337_1280.jpg',
@@ -42,8 +45,8 @@ class _FoodexIndexState extends State<FoodexIndex>
             elevation: 2.0,
             bottom: TabBar(
               tabs: <Widget>[
-                Tab(text: "Tab 1"),
-                Tab(text: "Tab 2"),
+                Tab(text: "Fish"),
+                Tab(text: "Insect"),
               ],
               controller: this._tabController,
             ),

@@ -19,6 +19,27 @@ class FoodexIndex extends StatelessWidget {
               ),
             ),
           ),
+          SliverList(
+            delegate: SliverChildListDelegate([
+              Container(
+                child: Text("123"),
+              ),
+            ]),
+          ),
+          SliverGrid(
+            gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 10.0,
+              crossAxisSpacing: 10.0,
+              childAspectRatio: 4.0,
+            ),
+            delegate: new SliverChildBuilderDelegate(
+              (BuildContext context, int index) {
+                return new Container();
+              },
+              childCount: 20,
+            ),
+          ),
         ],
       ),
     );

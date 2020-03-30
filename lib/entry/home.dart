@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/foodex/index.dart';
+import 'package:seafood_crossing/foodex/simple.dart';
 
 class SeafoodCrossingHome extends StatefulWidget {
   static const String route = '/home';
@@ -37,7 +38,7 @@ class _SeafoodCrossingHomeState extends State<SeafoodCrossingHome> {
       case 0:
         return Container();
       case 1:
-        return FoodexIndex();
+        return Test();
     }
 
     return Container();

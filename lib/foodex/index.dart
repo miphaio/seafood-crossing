@@ -33,7 +33,7 @@ class _FoodexIndexState extends State<FoodexIndex>
             flexibleSpace: FlexibleSpaceBar(
               title: const Text('Foodex'),
               titlePadding: EdgeInsets.only(
-                left: 16,
+                left: 24,
                 bottom: 50,
               ),
               background: CachedNetworkImage(

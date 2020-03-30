@@ -18,9 +18,13 @@ class _SeafoodCrossingHomeState extends State<SeafoodCrossingHome> {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
+            icon: Icon(Icons.card_travel),
+            title: Text('Travel'),
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.insert_emoticon),
             title: Text('Collection'),
-          )
+          ),
         ],
         currentIndex: this._selectedIndex,
         onTap: _onItemTapped,
@@ -31,6 +35,8 @@ class _SeafoodCrossingHomeState extends State<SeafoodCrossingHome> {
   Widget _buildBody() {
     switch (this._selectedIndex) {
       case 0:
+        return Container();
+      case 1:
         return CollectableIndex();
     }
 

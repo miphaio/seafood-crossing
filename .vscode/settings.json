@@ -6,6 +6,7 @@
         "INFOPLIST",
         "Onone",
         "RUNPATH",
+        "Stateful",
         "mipha"
     ],
     "cSpell.enableFiletypes": [

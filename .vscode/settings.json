@@ -9,7 +9,8 @@
         "RUNPATH",
         "Stateful",
         "fastfood",
-        "mipha"
+        "mipha",
+        "vsync"
     ],
     "cSpell.enableFiletypes": [
         "dart"

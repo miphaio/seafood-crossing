@@ -2,7 +2,25 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
 
-class FoodexIndex extends StatelessWidget {
+class FoodexIndex extends StatefulWidget {
+  @override
+  _FoodexIndexState createState() => _FoodexIndexState();
+}
+
+class _FoodexIndexState extends State<FoodexIndex>
+    with TickerProviderStateMixin {
+  TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(
+      initialIndex: 0,
+      vsync: this,
+      length: 2,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,8 +28,10 @@ class FoodexIndex extends StatelessWidget {
         slivers: <Widget>[
           SliverAppBar(
             pinned: true,
+            floating: true,
             expandedHeight: 125.0,
             flexibleSpace: FlexibleSpaceBar(
+              collapseMode: CollapseMode.pin,
               title: const Text('Foodex'),
               background: CachedNetworkImage(
                 imageUrl:
@@ -19,11 +39,19 @@ class FoodexIndex extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
+            elevation: 2.0,
+            bottom: TabBar(
+              tabs: <Widget>[
+                Tab(text: "Tab 1"),
+                Tab(text: "Tab 2"),
+              ],
+              controller: this._tabController,
+            ),
           ),
           SliverStickyHeader(
             header: Container(
               color: Colors.red,
-              height: 50.0,
+              height: 48.0,
               padding: EdgeInsets.symmetric(horizontal: 16.0),
               alignment: Alignment.centerLeft,
               child: this._buildFilter(),
@@ -43,7 +71,7 @@ class FoodexIndex extends StatelessWidget {
                     child: new Text('grid item $index'),
                   );
                 },
-                childCount: 20,
+                childCount: 200,
               ),
             ),
           ),

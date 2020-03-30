@@ -10,7 +10,7 @@ class FoodexIndex extends StatelessWidget {
         slivers: <Widget>[
           SliverAppBar(
             pinned: true,
-            expandedHeight: 250.0,
+            expandedHeight: 125.0,
             flexibleSpace: FlexibleSpaceBar(
               title: const Text('Foodex'),
               background: CachedNetworkImage(
@@ -22,14 +22,11 @@ class FoodexIndex extends StatelessWidget {
           ),
           SliverStickyHeader(
             header: Container(
-              height: 60.0,
-              color: Colors.lightBlue,
+              color: Colors.red,
+              height: 50.0,
               padding: EdgeInsets.symmetric(horizontal: 16.0),
               alignment: Alignment.centerLeft,
-              child: Text(
-                'Header #0',
-                style: const TextStyle(color: Colors.white),
-              ),
+              child: this._buildFilter(),
             ),
             sliver: SliverGrid(
               gridDelegate: new SliverGridDelegateWithFixedCrossAxisCount(
@@ -40,7 +37,6 @@ class FoodexIndex extends StatelessWidget {
               ),
               delegate: new SliverChildBuilderDelegate(
                 (BuildContext context, int index) {
-                  //创建子widget
                   return new Container(
                     alignment: Alignment.center,
                     color: Colors.cyan[100 * (index % 9)],
@@ -53,6 +49,22 @@ class FoodexIndex extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildFilter() {
+    return Wrap(
+      spacing: 5.0,
+      children: <Widget>[
+        InputChip(
+          label: Text("Fish"),
+          onPressed: () {},
+        ),
+        InputChip(
+          label: Text("Insect"),
+          onPressed: () {},
+        ),
+      ],
     );
   }
 }

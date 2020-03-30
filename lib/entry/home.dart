@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/foodex/index.dart';
+import 'package:seafood_crossing/i18n/core/localizations.dart';
 
 class SeafoodCrossingHome extends StatefulWidget {
   static const String route = '/home';
@@ -23,7 +24,9 @@ class _SeafoodCrossingHomeState extends State<SeafoodCrossingHome> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.fastfood),
-            title: Text('Foodex'),
+            title: Text(
+              CoreLocalizations.of(context).title,
+            ),
           ),
         ],
         currentIndex: this._selectedIndex,

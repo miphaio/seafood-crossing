@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seafood_crossing/foodex/components/grid.dart';
 
 class FoodexIndex extends StatefulWidget {
   @override
@@ -36,7 +37,7 @@ class _FoodexIndexState extends State<FoodexIndex>
         controller: _tabController,
         children: <Widget>[
           Text("Tab 1"),
-          Text("Tab 2"),
+          FoodexGrid(),
         ],
       ),
     );

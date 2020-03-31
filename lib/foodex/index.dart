@@ -31,8 +31,8 @@ class _FoodexIndexState extends State<FoodexIndex>
         bottom: TabBar(
           controller: this._tabController,
           tabs: <Widget>[
-            Tab(text: "Fish"),
-            Tab(text: "Insect"),
+            Tab(text: CoreLocalizations.of(context).getString('fish')),
+            Tab(text: CoreLocalizations.of(context).getString('insect')),
           ],
         ),
       ),

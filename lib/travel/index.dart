@@ -16,7 +16,9 @@ class _TravelIndexState extends State<TravelIndex> {
         ),
       ),
       body: Center(
-        child: Text("Not Implemented"),
+        child: Text(
+          CoreLocalizations.of(context).getString('not-implemented'),
+        ),
       ),
     );
   }

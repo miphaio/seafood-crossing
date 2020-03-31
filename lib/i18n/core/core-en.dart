@@ -1,4 +1,7 @@
 const Map<String, String> coreLocationEnglish = {
-  'travel': 'Travel',
+  'fish': 'Fish',
   'foodex': 'Foodex',
+  'insect': 'Insect',
+  'not-implemented': 'Not Implemented',
+  'travel': 'Travel',
 };

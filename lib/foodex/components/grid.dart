@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:seafood_crossing/foodex/components/item.dart';
+import 'package:seafood_crossing/foodex/entity/item.dart';
 
-var a = [
-  1,
-  2,
-  3,
-  4,
-  5,
-];
+var a = [1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6];
 
 class FoodexGrid extends StatelessWidget {
   @override
@@ -17,8 +13,8 @@ class FoodexGrid extends StatelessWidget {
         a.length,
         (index) {
           int current = a[index];
-          return Container(
-            child: Text(current.toString()),
+          return FoodexItem(
+            item: FoodexItemEntity(name: current.toString()),
           );
         },
       ),

@@ -1,3 +1,4 @@
 const Map<String, String> coreLocationChinese = {
-  'title': 'TTT',
+  'travel': '旅行',
+  'foodex': '海鲜百科',
 };

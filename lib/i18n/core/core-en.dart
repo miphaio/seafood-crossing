@@ -1,3 +1,4 @@
 const Map<String, String> coreLocationEnglish = {
-  'title': 'Title',
+  'travel': 'Travel',
+  'foodex': 'Foodex',
 };

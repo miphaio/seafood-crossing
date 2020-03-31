@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/foodex/components/grid.dart';
+import 'package:seafood_crossing/i18n/core/localizations.dart';
 
 class FoodexIndex extends StatefulWidget {
   @override
@@ -24,7 +25,9 @@ class _FoodexIndexState extends State<FoodexIndex>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Foodex'),
+        title: Text(
+          CoreLocalizations.of(context).getString('foodex'),
+        ),
         bottom: TabBar(
           controller: this._tabController,
           tabs: <Widget>[

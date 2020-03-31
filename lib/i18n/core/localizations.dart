@@ -20,11 +20,19 @@ class CoreLocalizations {
   };
 
   Map<String, String> get _stringMap {
-    return _localizedValues[locale.languageCode];
+    final Map<String, String> map = _localizedValues[locale.languageCode];
+    if (map == null) {
+      return {};
+    }
+    return map;
   }
 
-  String get title {
-    return _stringMap['title'];
+  String getString(String key) {
+    final String value = this._stringMap[key];
+    if (value == null) {
+      return "[$key]";
+    }
+    return value;
   }
 }
 
@@ -37,9 +45,11 @@ class _CoreLocalizationsDelegate
 
   @override
   Future<CoreLocalizations> load(Locale locale) {
-    return SynchronousFuture<CoreLocalizations>(CoreLocalizations(locale));
+    return SynchronousFuture<CoreLocalizations>(
+      CoreLocalizations(locale),
+    );
   }
 
   @override
-  bool shouldReload(_CoreLocalizationsDelegate old) => false;
+  bool shouldReload(_CoreLocalizationsDelegate before) => false;
 }

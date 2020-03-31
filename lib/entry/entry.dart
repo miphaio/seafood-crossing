@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:seafood_crossing/entry/home.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
+import 'package:seafood_crossing/i18n/foodex/localizations.dart';
 
 class SeafoodCrossingEntry extends StatelessWidget {
   @override
@@ -9,6 +10,7 @@ class SeafoodCrossingEntry extends StatelessWidget {
     return MaterialApp(
       localizationsDelegates: [
         CoreLocalizations.delegate,
+        FoodexLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],

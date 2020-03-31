@@ -14,7 +14,9 @@ class FoodexGrid extends StatelessWidget {
         (index) {
           int current = a[index];
           return FoodexItem(
-            item: FoodexItemEntity(name: current.toString()),
+            item: FoodexItemEntity(
+              name: current.toString(),
+            ),
           );
         },
       ),

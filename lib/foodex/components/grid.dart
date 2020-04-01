@@ -1,22 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/foodex/components/item.dart';
+import 'package:seafood_crossing/foodex/data/insect.dart';
 import 'package:seafood_crossing/foodex/entity/item.dart';
-
-var a = [1, 2, 3, 4, 5, 6, 6, 6, 6, 6, 6];
 
 class FoodexGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
-      crossAxisCount: 3,
+      padding: const EdgeInsets.all(10.0),
+      crossAxisCount: 2,
       children: List.generate(
-        a.length,
+        insectData.length,
         (index) {
-          int current = a[index];
+          FoodexItemEntity current = insectData[index];
           return FoodexItem(
-            item: FoodexItemEntity(
-              name: current.toString(),
-            ),
+            item: current,
           );
         },
       ),

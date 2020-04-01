@@ -1,5 +1,6 @@
 // spell-checker:disable
 const Map<String, String> foodexLocationEnglish = {
+  // Bugs
   'common-butterfly': "Common Butterfly",
   'yellow-butterfly': "Yellow Butterfly",
   'tiger-butterfly': "Tiger Butterfly",
@@ -80,5 +81,6 @@ const Map<String, String> foodexLocationEnglish = {
   'spider': "Spider",
   'tarantula': "Tarantula",
   'scorpion': "Scorpion",
+  // Fishes
 };
 // spell-checker:enable

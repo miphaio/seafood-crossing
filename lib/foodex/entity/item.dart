@@ -9,6 +9,8 @@ class FoodexItemEntity {
   final List<int> southernMonths;
   final List<int> hours;
 
+  final String location;
+
   FoodexItemEntity({
     @required this.name,
     @required this.icon,
@@ -16,6 +18,7 @@ class FoodexItemEntity {
     @required this.northernMonths,
     @required this.southernMonths,
     @required this.hours,
+    this.location,
   });
 
   String getDisplayName(BuildContext context) {

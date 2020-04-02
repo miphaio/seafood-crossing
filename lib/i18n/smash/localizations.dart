@@ -34,6 +34,36 @@ class SmashLocalizations {
     }
     return value;
   }
+
+  String getMonth(int month) {
+    switch (month) {
+      case 1:
+        return this.getString('january');
+      case 2:
+        return this.getString('february');
+      case 3:
+        return this.getString('march');
+      case 4:
+        return this.getString('april');
+      case 5:
+        return this.getString('may');
+      case 6:
+        return this.getString('june');
+      case 7:
+        return this.getString('july');
+      case 8:
+        return this.getString('august');
+      case 9:
+        return this.getString('september');
+      case 10:
+        return this.getString('october');
+      case 11:
+        return this.getString('november');
+      case 12:
+        return this.getString('december');
+    }
+    return "[$month]";
+  }
 }
 
 class _SmashLocalizationsDelegate

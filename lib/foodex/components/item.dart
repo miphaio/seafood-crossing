@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:seafood_crossing/foodex/entity/item.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
 import 'package:seafood_crossing/i18n/foodex/localizations.dart';
+import 'package:seafood_crossing/i18n/smash/localizations.dart';
 
 class FoodexItem extends StatelessWidget {
   final FoodexItemEntity item;
@@ -47,11 +48,14 @@ class FoodexItem extends StatelessWidget {
   Widget _buildMonths(BuildContext context) {
     if (this.item.northernMonths.length > 0) {
       return Wrap(
+        spacing: 1.0,
         children: this.item.northernMonths.map((int month) {
           return Card(
             child: Container(
               padding: const EdgeInsets.all(3.0),
-              child: Text(month.toString()),
+              child: Text(
+                SmashLocalizations.of(context).getMonth(month),
+              ),
             ),
           );
         }).toList(),
@@ -65,11 +69,14 @@ class FoodexItem extends StatelessWidget {
   Widget _buildTime(BuildContext context) {
     if (this.item.hours.length > 0) {
       return Wrap(
+        spacing: 1.0,
         children: this.item.hours.map((int hour) {
           return Card(
             child: Container(
               padding: const EdgeInsets.all(3.0),
-              child: Text(hour.toString()),
+              child: Text(
+                hour.toString(),
+              ),
             ),
           );
         }).toList(),

@@ -24,4 +24,8 @@ class FoodexItemEntity {
   String getDisplayName(BuildContext context) {
     return FoodexLocalizations.of(context).getString(this.name);
   }
+
+  Widget getDisplayText(BuildContext context) {
+    return Text(this.getDisplayName(context));
+  }
 }

@@ -11,14 +11,10 @@ class _TravelIndexState extends State<TravelIndex> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          CoreLocalizations.of(context).getString('travel'),
-        ),
+        title: CoreLocalizations.of(context).getText('travel'),
       ),
       body: Center(
-        child: Text(
-          CoreLocalizations.of(context).getString('not-implemented'),
-        ),
+        child: CoreLocalizations.of(context).getText('not-implemented'),
       ),
     );
   }

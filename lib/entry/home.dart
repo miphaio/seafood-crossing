@@ -23,21 +23,15 @@ class _SeafoodCrossingHomeState extends State<SeafoodCrossingHome> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.card_travel),
-            title: Text(
-              coreLocalizations.getString('travel'),
-            ),
+            title: coreLocalizations.getText('travel'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.fastfood),
-            title: Text(
-              coreLocalizations.getString('foodex'),
-            ),
+            title: coreLocalizations.getText('foodex'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.info),
-            title: Text(
-              coreLocalizations.getString('seafood-crossing'),
-            ),
+            title: coreLocalizations.getText('seafood-crossing'),
           ),
         ],
         currentIndex: this._selectedIndex,

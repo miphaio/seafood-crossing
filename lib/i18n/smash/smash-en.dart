@@ -17,6 +17,7 @@ const Map<String, String> smashLocalizationEnglish = {
   'active-time-all-day': 'Active All Day',
   'all-year': 'All Year',
   'all-day': 'All Day',
+  'current-time': 'Current Time',
   '1-am': '1AM',
   '2-am': '2AM',
   '3-am': '3AM',

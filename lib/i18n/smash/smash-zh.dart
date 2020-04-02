@@ -17,6 +17,7 @@ const Map<String, String> smashLocalizationChinese = {
   'active-time-all-day': '全天活动',
   'all-year': '全年',
   'all-day': '全天',
+  'current-time': '当前时间',
   '1-am': '上午一点',
   '2-am': '上午两点',
   '3-am': '上午三点',

@@ -1,4 +1,5 @@
 const Map<String, String> coreLocalizationChinese = {
+  'reset-filter': '重置过滤',
   'fish': '鱼类',
   'foodex': '海鲜百科',
   'github': 'Github',

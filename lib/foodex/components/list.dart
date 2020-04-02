@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/foodex/components/item.dart';
 import 'package:seafood_crossing/foodex/entity/item.dart';
+import 'package:seafood_crossing/i18n/core/localizations.dart';
 import 'package:seafood_crossing/i18n/smash/localizations.dart';
 import 'package:unicorndial/unicorndial.dart';
 
@@ -62,7 +63,7 @@ class _FoodexListState extends State<FoodexList> {
             children: this._buildFilters(),
           ),
           OutlineButton(
-            child: Text('clear'),
+            child: CoreLocalizations.of(context).getText('reset-filter'),
             onPressed: () {
               this.setState(() {
                 this._monthFilter = [];
@@ -107,7 +108,7 @@ class _FoodexListState extends State<FoodexList> {
   List<UnicornButton> _buildMenu() {
     return <UnicornButton>[
       UnicornButton(
-        labelText: 'current',
+        labelText: SmashLocalizations.of(context).getString('current-time'),
         hasLabel: true,
         labelHasShadow: false,
         currentButton: FloatingActionButton(

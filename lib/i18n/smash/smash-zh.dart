@@ -1,0 +1,14 @@
+const Map<String, String> smashLocalizationChinese = {
+  'january': '一月',
+  'february': '二月',
+  'march': '三月',
+  'april': '四月',
+  'may': '五月',
+  'june': '六月',
+  'july': '七月',
+  'august': '八月',
+  'september': '九月',
+  'october': '十月',
+  'november': '冬月',
+  'december': '腊月',
+};

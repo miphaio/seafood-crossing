@@ -15,8 +15,8 @@ class CoreLocalizations {
   static _CoreLocalizationsDelegate delegate = _CoreLocalizationsDelegate();
 
   static const Map<String, Map<String, String>> _localizedValues = {
-    'en': coreLocationEnglish,
-    'zh': coreLocationChinese,
+    'en': coreLocalizationEnglish,
+    'zh': coreLocalizationChinese,
   };
 
   Map<String, String> get _stringMap {

@@ -1,5 +1,5 @@
 // spell-checker:disable
-const Map<String, String> foodexLocationChinese = {
+const Map<String, String> foodexLocalizationChinese = {
   // Bugs
   'common-butterfly': '白粉蝶',
   'yellow-butterfly': 'yellow-butterfly',

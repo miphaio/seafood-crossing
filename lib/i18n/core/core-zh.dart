@@ -1,4 +1,4 @@
-const Map<String, String> coreLocationChinese = {
+const Map<String, String> coreLocalizationChinese = {
   'active-months': '活动月份',
   'active-time': '活动时间',
   'fish': '鱼类',

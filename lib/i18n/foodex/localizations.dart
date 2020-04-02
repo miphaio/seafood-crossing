@@ -15,8 +15,8 @@ class FoodexLocalizations {
   static _FoodexLocalizationsDelegate delegate = _FoodexLocalizationsDelegate();
 
   static const Map<String, Map<String, String>> _localizedValues = {
-    'en': foodexLocationEnglish,
-    'zh': foodexLocationChinese,
+    'en': foodexLocalizationEnglish,
+    'zh': foodexLocalizationChinese,
   };
 
   Map<String, String> get _stringMap {

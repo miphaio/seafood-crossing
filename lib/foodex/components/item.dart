@@ -20,9 +20,7 @@ class FoodexItem extends StatelessWidget {
         width: 32,
         height: 32,
       ),
-      title: Text(
-        FoodexLocalizations.of(context).getString(this.item.name),
-      ),
+      title: FoodexLocalizations.of(context).getText(this.item.name),
       subtitle: Text(this.item.price.toString()),
       children: <Widget>[
         this._buildMonthTile(context),
@@ -36,17 +34,13 @@ class FoodexItem extends StatelessWidget {
       return ListTile(
         dense: true,
         leading: Icon(Icons.date_range),
-        title: Text(
-          SmashLocalizations.of(context).getString('active-months-all-year'),
-        ),
+        title: SmashLocalizations.of(context).getText('active-months-all-year'),
       );
     }
     return ListTile(
       dense: true,
       leading: Icon(Icons.date_range),
-      title: Text(
-        SmashLocalizations.of(context).getString('active-months'),
-      ),
+      title: SmashLocalizations.of(context).getText('active-months'),
       subtitle: this._buildMonths(context),
     );
   }
@@ -56,18 +50,14 @@ class FoodexItem extends StatelessWidget {
       return ListTile(
         dense: true,
         leading: Icon(Icons.access_time),
-        title: Text(
-          SmashLocalizations.of(context).getString('active-time-all-day'),
-        ),
+        title: SmashLocalizations.of(context).getText('active-time-all-day'),
       );
     }
 
     return ListTile(
       dense: true,
       leading: Icon(Icons.access_time),
-      title: Text(
-        SmashLocalizations.of(context).getString('active-time'),
-      ),
+      title: SmashLocalizations.of(context).getText('active-time'),
       subtitle: this._buildTime(context),
     );
   }
@@ -75,9 +65,7 @@ class FoodexItem extends StatelessWidget {
   Widget _buildMonths(BuildContext context) {
     if (this.item.northernMonths.length == 12) {
       return Container(
-        child: Text(
-          SmashLocalizations.of(context).getString('all-year'),
-        ),
+        child: SmashLocalizations.of(context).getText('all-year'),
       );
     }
 
@@ -88,25 +76,19 @@ class FoodexItem extends StatelessWidget {
           return Card(
             child: Container(
               padding: const EdgeInsets.all(3.0),
-              child: Text(
-                SmashLocalizations.of(context).getMonth(month),
-              ),
+              child: SmashLocalizations.of(context).getMonthText(month),
             ),
           );
         }).toList(),
       );
     }
-    return Text(
-      CoreLocalizations.of(context).getString('no-data'),
-    );
+    return CoreLocalizations.of(context).getText('no-data');
   }
 
   Widget _buildTime(BuildContext context) {
     if (this.item.hours.length == 24) {
       return Container(
-        child: Text(
-          SmashLocalizations.of(context).getString('all-day'),
-        ),
+        child: SmashLocalizations.of(context).getText('all-day'),
       );
     }
 
@@ -117,16 +99,12 @@ class FoodexItem extends StatelessWidget {
           return Card(
             child: Container(
               padding: const EdgeInsets.all(3.0),
-              child: Text(
-                hour.toString(),
-              ),
+              child: SmashLocalizations.of(context).getHourText(hour),
             ),
           );
         }).toList(),
       );
     }
-    return Text(
-      CoreLocalizations.of(context).getString('no-data'),
-    );
+    return CoreLocalizations.of(context).getText('no-data');
   }
 }

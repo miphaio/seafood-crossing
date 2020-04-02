@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seafood_crossing/about/index.dart';
 import 'package:seafood_crossing/foodex/index.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
 import 'package:seafood_crossing/travel/index.dart';
@@ -15,6 +16,7 @@ class _SeafoodCrossingHomeState extends State<SeafoodCrossingHome> {
 
   @override
   Widget build(BuildContext context) {
+    CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
     return Scaffold(
       body: this._buildBody(),
       bottomNavigationBar: BottomNavigationBar(
@@ -22,13 +24,19 @@ class _SeafoodCrossingHomeState extends State<SeafoodCrossingHome> {
           BottomNavigationBarItem(
             icon: Icon(Icons.card_travel),
             title: Text(
-              CoreLocalizations.of(context).getString('travel'),
+              coreLocalizations.getString('travel'),
             ),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.fastfood),
             title: Text(
-              CoreLocalizations.of(context).getString('foodex'),
+              coreLocalizations.getString('foodex'),
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.info),
+            title: Text(
+              coreLocalizations.getString('seafood-crossing'),
             ),
           ),
         ],
@@ -44,6 +52,8 @@ class _SeafoodCrossingHomeState extends State<SeafoodCrossingHome> {
         return TravelIndex();
       case 1:
         return FoodexIndex();
+      case 2:
+        return AboutIndex();
     }
 
     return Container();

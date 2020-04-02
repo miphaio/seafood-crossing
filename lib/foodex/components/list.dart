@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/foodex/components/item.dart';
 import 'package:seafood_crossing/foodex/entity/item.dart';
+import 'package:seafood_crossing/i18n/smash/localizations.dart';
 import 'package:unicorndial/unicorndial.dart';
 
-class FoodexList extends StatelessWidget {
+class FoodexList extends StatefulWidget {
   final List<FoodexItemEntity> items;
 
   FoodexList({
@@ -11,15 +12,25 @@ class FoodexList extends StatelessWidget {
   });
 
   @override
+  _FoodexListState createState() => _FoodexListState();
+}
+
+class _FoodexListState extends State<FoodexList> {
+  List<int> _monthFilter = [];
+  List<int> _timeFilter = [];
+
+  @override
   Widget build(BuildContext context) {
+    final List<FoodexItemEntity> filteredItems = this._getFilteredItems();
     return Scaffold(
       body: Column(
         children: <Widget>[
+          this._buildFilter(),
           Expanded(
             child: ListView.builder(
-              itemCount: this.items.length,
+              itemCount: filteredItems.length,
               itemBuilder: (BuildContext context, int index) {
-                final FoodexItemEntity current = this.items[index];
+                final FoodexItemEntity current = filteredItems[index];
                 return FoodexItem(
                   item: current,
                 );
@@ -35,22 +46,108 @@ class FoodexList extends StatelessWidget {
     );
   }
 
+  Widget _buildFilter() {
+    if (this._monthFilter.length == 0 || this._timeFilter.length == 0) {
+      return Container();
+    }
+    return Container(
+      padding: const EdgeInsets.fromLTRB(8.0, 0, 8.0, 0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Wrap(
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 3.0,
+            children: this._buildFilters(),
+          ),
+          OutlineButton(
+            child: Text('clear'),
+            onPressed: () {
+              this.setState(() {
+                this._monthFilter = [];
+                this._timeFilter = [];
+              });
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  List<Widget> _buildFilters() {
+    final List<Widget> filters = [];
+    filters.add(Icon(Icons.opacity));
+    filters.addAll(
+      this._monthFilter.map(
+            (int month) => this._buildChip(
+              SmashLocalizations.of(context).getMonthText(month),
+            ),
+          ),
+    );
+    filters.addAll(
+      this._timeFilter.map(
+            (int hour) => this._buildChip(
+              SmashLocalizations.of(context).getHourText(hour),
+            ),
+          ),
+    );
+    return filters;
+  }
+
+  Widget _buildChip(Widget label) {
+    return Chip(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(3.0),
+      ),
+      label: label,
+    );
+  }
+
   List<UnicornButton> _buildMenu() {
     return <UnicornButton>[
       UnicornButton(
+        labelText: 'current',
+        hasLabel: true,
+        labelHasShadow: false,
         currentButton: FloatingActionButton(
           mini: true,
-          child: Icon(Icons.ac_unit),
-          onPressed: () {},
-        ),
-      ),
-      UnicornButton(
-        currentButton: FloatingActionButton(
-          mini: true,
-          child: Icon(Icons.ac_unit),
-          onPressed: () {},
+          child: Icon(Icons.alarm),
+          onPressed: () {
+            final DateTime now = DateTime.now();
+            this.setState(() {
+              this._monthFilter = [now.month];
+              this._timeFilter = [now.hour];
+            });
+          },
         ),
       ),
     ];
+  }
+
+  List<FoodexItemEntity> _getFilteredItems() {
+    if (this._monthFilter.length == 0 && this._timeFilter.length == 0) {
+      return widget.items;
+    }
+
+    List<FoodexItemEntity> items = [];
+    for (final item in widget.items) {
+      bool timeOk = false;
+      bool monthOk = false;
+      for (final hour in this._timeFilter) {
+        if (item.hours.indexOf(hour) != -1) {
+          timeOk = true;
+        }
+      }
+      for (final month in this._monthFilter) {
+        if (item.northernMonths.indexOf(month) != -1) {
+          monthOk = true;
+        }
+      }
+      if (timeOk && monthOk) {
+        items.add(item);
+      }
+    }
+    return items;
   }
 }

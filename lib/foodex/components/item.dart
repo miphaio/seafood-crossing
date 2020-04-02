@@ -25,23 +25,50 @@ class FoodexItem extends StatelessWidget {
       ),
       subtitle: Text(this.item.price.toString()),
       children: <Widget>[
-        ListTile(
-          dense: true,
-          leading: Icon(Icons.date_range),
-          title: Text(
-            CoreLocalizations.of(context).getString('active-months'),
-          ),
-          subtitle: this._buildMonths(context),
-        ),
-        ListTile(
-          dense: true,
-          leading: Icon(Icons.access_time),
-          title: Text(
-            CoreLocalizations.of(context).getString('active-time'),
-          ),
-          subtitle: this._buildTime(context),
-        ),
+        this._buildMonthTile(context),
+        this._buildTimeTile(context),
       ],
+    );
+  }
+
+  Widget _buildMonthTile(BuildContext context) {
+    if (this.item.northernMonths.length == 12) {
+      return ListTile(
+        dense: true,
+        leading: Icon(Icons.date_range),
+        title: Text(
+          SmashLocalizations.of(context).getString('active-months-all-year'),
+        ),
+      );
+    }
+    return ListTile(
+      dense: true,
+      leading: Icon(Icons.date_range),
+      title: Text(
+        SmashLocalizations.of(context).getString('active-months'),
+      ),
+      subtitle: this._buildMonths(context),
+    );
+  }
+
+  Widget _buildTimeTile(BuildContext context) {
+    if (this.item.hours.length == 24) {
+      return ListTile(
+        dense: true,
+        leading: Icon(Icons.access_time),
+        title: Text(
+          SmashLocalizations.of(context).getString('active-time-all-day'),
+        ),
+      );
+    }
+
+    return ListTile(
+      dense: true,
+      leading: Icon(Icons.access_time),
+      title: Text(
+        SmashLocalizations.of(context).getString('active-time'),
+      ),
+      subtitle: this._buildTime(context),
     );
   }
 

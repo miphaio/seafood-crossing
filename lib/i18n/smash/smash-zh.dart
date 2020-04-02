@@ -11,4 +11,6 @@ const Map<String, String> smashLocalizationChinese = {
   'october': '十月',
   'november': '冬月',
   'december': '腊月',
+  'all-year': '全年',
+  'all-day': '全天',
 };

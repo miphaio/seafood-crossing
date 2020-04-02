@@ -11,4 +11,6 @@ const Map<String, String> smashLocalizationEnglish = {
   'october': 'October',
   'november': 'November',
   'december': 'December',
+  'all-year': 'All Year',
+  'all-day': 'All Day',
 };

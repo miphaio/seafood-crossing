@@ -46,6 +46,14 @@ class FoodexItem extends StatelessWidget {
   }
 
   Widget _buildMonths(BuildContext context) {
+    if (this.item.northernMonths.length == 12) {
+      return Container(
+        child: Text(
+          SmashLocalizations.of(context).getString('all-year'),
+        ),
+      );
+    }
+
     if (this.item.northernMonths.length > 0) {
       return Wrap(
         spacing: 1.0,
@@ -67,6 +75,14 @@ class FoodexItem extends StatelessWidget {
   }
 
   Widget _buildTime(BuildContext context) {
+    if (this.item.hours.length == 24) {
+      return Container(
+        child: Text(
+          SmashLocalizations.of(context).getString('all-day'),
+        ),
+      );
+    }
+
     if (this.item.hours.length > 0) {
       return Wrap(
         spacing: 1.0,

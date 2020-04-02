@@ -10,7 +10,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [1, 2, 3, 11, 12],
     southernMonths: [5, 6, 7, 8, 9],
     hours: [
-      0,
       1,
       2,
       3,
@@ -56,7 +55,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     southernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     hours: [
-      0,
       1,
       2,
       3,
@@ -102,7 +100,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     southernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     hours: [
-      0,
       1,
       2,
       3,
@@ -148,7 +145,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     southernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     hours: [
-      0,
       1,
       2,
       3,
@@ -204,7 +200,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [4, 5, 6, 7, 8],
     southernMonths: [10, 11, 12, 1, 2],
     hours: [
-      0,
       1,
       2,
       3,
@@ -240,7 +235,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [4, 5, 6, 7, 8, 9],
     southernMonths: [10, 11, 12, 1, 2, 3],
     hours: [
-      0,
       1,
       2,
       3,
@@ -317,7 +311,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [3, 4, 5, 6, 7],
     southernMonths: [9, 10, 11, 12, 1],
     hours: [
-      0,
       1,
       2,
       3,
@@ -353,7 +346,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [5, 6, 7, 8],
     southernMonths: [11, 12, 1, 2],
     hours: [
-      0,
       1,
       2,
       3,
@@ -399,7 +391,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [3, 4, 5],
     southernMonths: [9, 10, 11],
     hours: [
-      0,
       1,
       2,
       3,
@@ -465,7 +456,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [10, 11, 12, 1, 2, 3],
     southernMonths: [4, 5, 6, 7, 8, 9],
     hours: [
-      0,
       1,
       2,
       3,
@@ -501,7 +491,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     southernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     hours: [
-      0,
       1,
       2,
       3,
@@ -537,7 +526,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [7, 8, 9, 10],
     southernMonths: [12, 1, 2, 3, 4],
     hours: [
-      0,
       1,
       2,
       3,
@@ -573,7 +561,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [9, 10, 11, 12],
     southernMonths: [3, 4, 5, 6],
     hours: [
-      0,
       1,
       2,
       3,
@@ -609,7 +596,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [12, 1, 2],
     southernMonths: [6, 7, 8],
     hours: [
-      0,
       1,
       2,
       3,
@@ -645,7 +631,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [7, 8, 9],
     southernMonths: [1, 2, 3],
     hours: [
-      0,
       1,
       2,
       3,
@@ -681,7 +666,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [3, 4, 5, 6, 9, 10, 11],
     southernMonths: [3, 4, 5, 9, 10, 11, 12],
     hours: [
-      0,
       1,
       2,
       3,
@@ -747,7 +731,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [9],
     southernMonths: [3],
     hours: [
-      0,
       1,
       2,
       3,
@@ -783,7 +766,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [9],
     southernMonths: [3],
     hours: [
-      0,
       1,
       2,
       3,
@@ -949,7 +931,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [9, 10, 11, 12, 1, 2, 3],
     southernMonths: [3, 4, 5, 6, 7, 8, 9],
     hours: [
-      0,
       1,
       2,
       3,
@@ -985,7 +966,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [12, 1, 2, 3],
     southernMonths: [6, 7, 8, 9],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1021,7 +1001,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [4, 5, 6, 7, 8, 9, 10, 11],
     southernMonths: [10, 11, 12, 1, 2, 3, 4, 5],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1057,7 +1036,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [4, 5, 6, 7, 8, 9],
     southernMonths: [10, 11, 12, 1, 2, 3],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1093,7 +1071,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [4, 5, 6, 7, 8, 9],
     southernMonths: [10, 11, 12, 1, 2, 3],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1129,7 +1106,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [4, 5, 6, 7, 8, 9],
     southernMonths: [10, 11, 12, 1, 2, 3],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1175,7 +1151,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [4, 5, 6, 7, 8, 9, 10, 11],
     southernMonths: [10, 11, 12, 1, 2, 3, 4, 5],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1221,7 +1196,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [7, 8, 9],
     southernMonths: [1, 2, 3],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1267,7 +1241,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     southernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1303,7 +1276,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [3, 4, 5, 6, 7, 8, 9, 10, 11],
     southernMonths: [9, 10, 11, 12, 1, 2, 3, 4, 5],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1339,7 +1311,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     southernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1375,7 +1346,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     southernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1411,7 +1381,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [10, 11, 12, 1, 2, 3, 4],
     southernMonths: [4, 5, 6, 7, 8, 9, 10],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1447,7 +1416,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     southernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1483,7 +1451,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [12, 1, 2, 3, 4, 5, 6, 7, 8],
     southernMonths: [6, 7, 8, 9, 10, 11, 12, 1, 2],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1519,7 +1486,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [8, 9, 10],
     southernMonths: [2, 3, 4],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1555,7 +1521,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [7, 8, 9, 10],
     southernMonths: [12, 1, 2, 3, 4],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1591,7 +1556,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [11, 12, 1, 2, 3, 4],
     southernMonths: [5, 6, 7, 8, 9, 10],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1627,7 +1591,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [7, 8, 9, 11, 12, 1, 2, 3, 4],
     southernMonths: [1, 2, 3, 5, 6, 7, 8, 9, 10, 11],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1663,7 +1626,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [5, 6, 7, 8, 9, 10],
     southernMonths: [11, 12, 1, 2, 3, 4],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1699,7 +1661,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [5, 6, 7, 8, 9, 10],
     southernMonths: [11, 12, 1, 2, 3, 4],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1785,7 +1746,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [6, 7, 8, 9],
     southernMonths: [12, 1, 2, 3],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1821,7 +1781,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [6, 7, 8, 9],
     southernMonths: [12, 1, 2, 3],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1867,7 +1826,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [12, 1, 2, 3, 4, 5],
     southernMonths: [6, 7, 8, 9, 10, 11],
     hours: [
-      0,
       1,
       2,
       3,
@@ -1913,7 +1871,6 @@ final List<FoodexItemEntity> fishData = [
     northernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     southernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     hours: [
-      0,
       1,
       2,
       3,

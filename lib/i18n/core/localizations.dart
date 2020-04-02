@@ -34,6 +34,10 @@ class CoreLocalizations {
     }
     return value;
   }
+
+  Text getText(String key) {
+    return Text(this.getString(key));
+  }
 }
 
 class _CoreLocalizationsDelegate

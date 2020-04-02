@@ -35,6 +35,10 @@ class SmashLocalizations {
     return value;
   }
 
+  Text getText(String key) {
+    return Text(this.getString(key));
+  }
+
   String getMonth(int month) {
     switch (month) {
       case 1:
@@ -63,6 +67,68 @@ class SmashLocalizations {
         return this.getString('december');
     }
     return "[$month]";
+  }
+
+  Text getMonthText(int month) {
+    return Text(this.getMonth(month));
+  }
+
+  String getHour(int hour) {
+    switch (hour) {
+      case 1:
+        return this.getString('1-am');
+      case 2:
+        return this.getString('2-am');
+      case 3:
+        return this.getString('3-am');
+      case 4:
+        return this.getString('4-am');
+      case 5:
+        return this.getString('5-am');
+      case 6:
+        return this.getString('6-am');
+      case 7:
+        return this.getString('7-am');
+      case 8:
+        return this.getString('8-am');
+      case 9:
+        return this.getString('9-am');
+      case 10:
+        return this.getString('10-am');
+      case 11:
+        return this.getString('11-am');
+      case 12:
+        return this.getString('12-am');
+      case 13:
+        return this.getString('1-pm');
+      case 14:
+        return this.getString('2-pm');
+      case 15:
+        return this.getString('3-pm');
+      case 16:
+        return this.getString('4-pm');
+      case 17:
+        return this.getString('5-pm');
+      case 18:
+        return this.getString('6-pm');
+      case 19:
+        return this.getString('7-pm');
+      case 20:
+        return this.getString('8-pm');
+      case 21:
+        return this.getString('9-pm');
+      case 22:
+        return this.getString('10-pm');
+      case 23:
+        return this.getString('11-pm');
+      case 24:
+        return this.getString('12-pm');
+    }
+    return "[$hour]";
+  }
+
+  Text getHourText(int hour) {
+    return Text(this.getHour(hour));
   }
 }
 

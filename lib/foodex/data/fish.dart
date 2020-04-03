@@ -41,7 +41,7 @@ final List<FoodexItemEntity> fishData = [
     name: 'pale-chub',
     icon:
         'https://static1.millenium.us.org/articles/3/14/97/3/@/155424-sakana-2-i-64x64-1.png',
-    price: 160,
+    price: 200,
     northernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     southernMonths: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     hours: [9, 10, 11, 12, 13, 14, 15, 16],
@@ -342,7 +342,7 @@ final List<FoodexItemEntity> fishData = [
     name: 'frog',
     icon:
         'https://static1.millenium.us.org/articles/3/14/97/3/@/155481-sakana-15-i-64x64-1.png',
-    price: 0,
+    price: 120,
     northernMonths: [5, 6, 7, 8],
     southernMonths: [11, 12, 1, 2],
     hours: [
@@ -592,7 +592,7 @@ final List<FoodexItemEntity> fishData = [
     name: 'pond-smelt',
     icon:
         'https://static1.millenium.us.org/articles/3/14/97/3/@/155568-sakana-25-i-64x64-1.png',
-    price: 160,
+    price: 300,
     northernMonths: [12, 1, 2],
     southernMonths: [6, 7, 8],
     hours: [

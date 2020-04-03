@@ -15,7 +15,10 @@
         "cupertino",
         "fastfood",
         "interps",
+        "libstdc",
+        "macos",
         "mipha",
+        "toolchain",
         "unicorndial",
         "vsync",
         "youtube"

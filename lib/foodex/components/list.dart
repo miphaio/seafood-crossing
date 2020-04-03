@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seafood_crossing/common/components/input-dialog.dart';
 import 'package:seafood_crossing/foodex/components/item.dart';
 import 'package:seafood_crossing/foodex/entity/item.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
@@ -19,6 +20,7 @@ class FoodexList extends StatefulWidget {
 class _FoodexListState extends State<FoodexList> {
   List<int> _monthFilter = [];
   List<int> _timeFilter = [];
+  String _nameFilter;
 
   @override
   Widget build(BuildContext context) {
@@ -79,20 +81,22 @@ class _FoodexListState extends State<FoodexList> {
   List<Widget> _buildFilters() {
     final List<Widget> filters = [];
     filters.add(Icon(Icons.opacity));
-    filters.addAll(
-      this._monthFilter.map(
-            (int month) => this._buildChip(
-              SmashLocalizations.of(context).getMonthText(month),
-            ),
+    filters.addAll(this._monthFilter.map(
+          (int month) => this._buildChip(
+            SmashLocalizations.of(context).getMonthText(month),
           ),
-    );
-    filters.addAll(
-      this._timeFilter.map(
-            (int hour) => this._buildChip(
-              SmashLocalizations.of(context).getHourText(hour),
-            ),
+        ));
+    filters.addAll(this._timeFilter.map(
+          (int hour) => this._buildChip(
+            SmashLocalizations.of(context).getHourText(hour),
           ),
-    );
+        ));
+
+    if (this._nameFilter != null) {
+      filters.add(this._buildChip(
+        Text(this._nameFilter),
+      ));
+    }
     return filters;
   }
 
@@ -107,6 +111,27 @@ class _FoodexListState extends State<FoodexList> {
 
   List<UnicornButton> _buildMenu() {
     return <UnicornButton>[
+      UnicornButton(
+        labelText: SmashLocalizations.of(context).getString('current-time'),
+        hasLabel: true,
+        labelHasShadow: false,
+        currentButton: FloatingActionButton(
+          mini: true,
+          child: Icon(Icons.alarm),
+          onPressed: () async {
+            final String filter = await openInputDialog(
+              context,
+              title: 'Search By Name',
+              label: 'Name',
+            );
+            if (filter.length > 0) {
+              setState(() {
+                this._nameFilter = filter;
+              });
+            }
+          },
+        ),
+      ),
       UnicornButton(
         labelText: SmashLocalizations.of(context).getString('current-time'),
         hasLabel: true,

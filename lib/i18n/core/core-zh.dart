@@ -6,6 +6,7 @@ const Map<String, String> coreLocalizationChinese = {
   'insect': '昆虫',
   'no-data': '没有数据',
   'not-implemented': '未实现',
+  'ok': '好',
   'open-source': '开源',
   'seafood-crossing': '海鲜之森',
   'travel': '旅行',

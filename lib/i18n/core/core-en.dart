@@ -6,6 +6,7 @@ const Map<String, String> coreLocalizationEnglish = {
   'insect': 'Insect',
   'no-data': 'No Data',
   'not-implemented': 'Not Implemented',
+  'ok': 'OK',
   'open-source': 'Open Source',
   'seafood-crossing': 'Seafood Crossing',
   'travel': 'Travel',

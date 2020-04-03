@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seafood_crossing/i18n/core/localizations.dart';
 
 Future<String> openInputDialog(
   BuildContext context, {
@@ -24,7 +25,7 @@ Future<String> openInputDialog(
         ),
         actions: <Widget>[
           FlatButton(
-            child: Text('Ok'),
+            child: CoreLocalizations.of(context).getText('ok'),
             onPressed: () => Navigator.of(context).pop(result),
           ),
         ],

@@ -3,6 +3,8 @@ import 'package:seafood_crossing/common/components/input-dialog.dart';
 import 'package:seafood_crossing/foodex/components/item.dart';
 import 'package:seafood_crossing/foodex/entity/item.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
+import 'package:seafood_crossing/i18n/foodex/foodex-en.dart';
+import 'package:seafood_crossing/i18n/foodex/foodex-zh.dart';
 import 'package:seafood_crossing/i18n/smash/localizations.dart';
 import 'package:unicorndial/unicorndial.dart';
 
@@ -50,7 +52,9 @@ class _FoodexListState extends State<FoodexList> {
   }
 
   Widget _buildFilter() {
-    if (this._monthFilter.length == 0 || this._timeFilter.length == 0) {
+    if (this._monthFilter.length == 0 &&
+        this._timeFilter.length == 0 &&
+        this._nameFilter == null) {
       return Container();
     }
     return Container(
@@ -70,6 +74,7 @@ class _FoodexListState extends State<FoodexList> {
               this.setState(() {
                 this._monthFilter = [];
                 this._timeFilter = [];
+                this._nameFilter = null;
               });
             },
           ),
@@ -112,19 +117,21 @@ class _FoodexListState extends State<FoodexList> {
   List<UnicornButton> _buildMenu() {
     return <UnicornButton>[
       UnicornButton(
-        labelText: SmashLocalizations.of(context).getString('current-time'),
+        labelText: SmashLocalizations.of(context).getString('accord-name'),
         hasLabel: true,
         labelHasShadow: false,
         currentButton: FloatingActionButton(
           mini: true,
-          child: Icon(Icons.alarm),
+          child: Icon(Icons.youtube_searched_for),
           onPressed: () async {
             final String filter = await openInputDialog(
               context,
-              title: 'Search By Name',
-              label: 'Name',
+              title: SmashLocalizations.of(context)
+                  .getString('accord-name-search'),
+              label:
+                  SmashLocalizations.of(context).getString('accord-name-label'),
             );
-            if (filter.length > 0) {
+            if (filter != null && filter.length > 0) {
               setState(() {
                 this._nameFilter = filter;
               });
@@ -152,14 +159,29 @@ class _FoodexListState extends State<FoodexList> {
   }
 
   List<FoodexItemEntity> _getFilteredItems() {
-    if (this._monthFilter.length == 0 && this._timeFilter.length == 0) {
+    if (this._monthFilter.length == 0 &&
+        this._timeFilter.length == 0 &&
+        this._nameFilter == null) {
       return widget.items;
     }
 
     List<FoodexItemEntity> items = [];
     for (final item in widget.items) {
-      bool timeOk = false;
-      bool monthOk = false;
+      bool timeOk = this._timeFilter.length == 0;
+      bool monthOk = this._monthFilter.length == 0;
+      bool nameOk = this._nameFilter == null;
+
+      if (this._nameFilter != null) {
+        final String zhName = foodexLocalizationChinese[item.name];
+        final String enName = foodexLocalizationEnglish[item.name];
+
+        if (zhName.indexOf(this._nameFilter) != -1 ||
+            enName.indexOf(this._nameFilter) != -1 ||
+            item.name.indexOf(this._nameFilter) != -1) {
+          nameOk = true;
+        }
+      }
+
       for (final hour in this._timeFilter) {
         if (item.hours.indexOf(hour) != -1) {
           timeOk = true;
@@ -170,7 +192,7 @@ class _FoodexListState extends State<FoodexList> {
           monthOk = true;
         }
       }
-      if (timeOk && monthOk) {
+      if (timeOk && monthOk && nameOk) {
         items.add(item);
       }
     }

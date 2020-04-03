@@ -118,7 +118,7 @@ class _FoodexListState extends State<FoodexList> {
             final DateTime now = DateTime.now();
             this.setState(() {
               this._monthFilter = [now.month];
-              this._timeFilter = [now.hour];
+              this._timeFilter = [now.hour == 0 ? 24 : now.hour];
             });
           },
         ),

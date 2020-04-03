@@ -172,12 +172,13 @@ class _FoodexListState extends State<FoodexList> {
       bool nameOk = this._nameFilter == null;
 
       if (this._nameFilter != null) {
+        final String filter = this._nameFilter.toLowerCase();
         final String zhName = foodexLocalizationChinese[item.name];
         final String enName = foodexLocalizationEnglish[item.name];
 
-        if (zhName.indexOf(this._nameFilter) != -1 ||
-            enName.indexOf(this._nameFilter) != -1 ||
-            item.name.indexOf(this._nameFilter) != -1) {
+        if (zhName.indexOf(filter) != -1 ||
+            enName.toLowerCase().indexOf(filter) != -1 ||
+            item.name.indexOf(filter) != -1) {
           nameOk = true;
         }
       }

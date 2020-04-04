@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/common/account.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
+import 'package:seafood_crossing/travel/add-destination.dart';
 import 'package:seafood_crossing/travel/repository/fetch.dart';
 import 'package:unicorndial/unicorndial.dart';
 
@@ -34,7 +35,14 @@ class _TravelPageState extends State<TravelPage> {
         ),
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AddDestination(),
+              ),
+            );
+          },
         ),
       ),
     );

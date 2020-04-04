@@ -21,6 +21,16 @@ class UserInfo {
     );
   }
 
+  static Future<UserInfo> init() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+
+    await preferences.setString(_Seafood_Crossing_Identifier, 'new-user');
+
+    return UserInfo(
+      identifier: 'new-user',
+    );
+  }
+
   static Future<bool> check() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
 

@@ -1,5 +1,7 @@
 const Map<String, String> coreLocalizationChinese = {
   'reset-filter': '重置过滤',
+  'first-time-using-title': '你似乎是第一次使用海鲜之森。',
+  'first-time-using-subtitle': '点击 <开始使用> 以继续！',
   'fish': '鱼类',
   'foodex': '海鲜百科',
   'github': 'Github',
@@ -9,6 +11,7 @@ const Map<String, String> coreLocalizationChinese = {
   'ok': '好',
   'open-source': '开源',
   'seafood-crossing': '海鲜之森',
+  'start-using': '开始使用',
   'travel': '旅行',
   'visit': '访问',
 };

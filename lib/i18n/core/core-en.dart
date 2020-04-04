@@ -1,5 +1,7 @@
 const Map<String, String> coreLocalizationEnglish = {
   'reset-filter': 'Reset',
+  'first-time-using-title': 'Seems you are just start using seafood crossing.',
+  'first-time-using-subtitle': 'Click <Start Using> to start!',
   'fish': 'Fish',
   'foodex': 'Foodex',
   'github': 'Github',
@@ -9,6 +11,7 @@ const Map<String, String> coreLocalizationEnglish = {
   'ok': 'OK',
   'open-source': 'Open Source',
   'seafood-crossing': 'Seafood Crossing',
+  'start-using': 'Start Using',
   'travel': 'Travel',
   'visit': 'Visit',
 };

@@ -34,6 +34,14 @@ Future<CreateRepositoryResponse> createRepository({
       },
     );
 
+    final String identifier = response.data['identifier'].toString();
+
+    if (identifier.length < 5) {
+      return null;
+    }
+
+    await UserInfo.update(identifier);
+
     return CreateRepositoryResponse(
       created: response.data['created'] as bool,
     );

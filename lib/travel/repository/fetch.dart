@@ -34,6 +34,14 @@ Future<FetchRepositoryResponse> fetchRepository({
       },
     );
 
+    final String identifier = response.data['identifier'].toString();
+
+    if (identifier.length < 5) {
+      return null;
+    }
+
+    await UserInfo.update(identifier);
+
     return FetchRepositoryResponse(
       created: response.data['created'] as bool,
     );

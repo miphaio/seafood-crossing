@@ -21,6 +21,14 @@ class UserInfo {
     );
   }
 
+  static Future<bool> check() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+
+    final String identifier =
+        preferences.getString(_Seafood_Crossing_Identifier);
+    return identifier != null;
+  }
+
   static Future<UserInfo> update(String identifier) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
 

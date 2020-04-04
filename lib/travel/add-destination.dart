@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
+import 'package:seafood_crossing/travel/repository/create.dart';
 
 class AddDestination extends StatefulWidget {
   @override
@@ -9,6 +10,7 @@ class AddDestination extends StatefulWidget {
 class _AddDestinationState extends State<AddDestination> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final Map<String, String> _data = {};
+  bool _loading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -29,10 +31,7 @@ class _AddDestinationState extends State<AddDestination> {
                     children: this._buildFormFields(context),
                   ),
                 ),
-                RaisedButton(
-                  child: CoreLocalizations.of(context).getText('submit'),
-                  onPressed: this._submit,
-                ),
+                this._buildSubmitButton(),
               ],
             ),
           ),
@@ -54,7 +53,7 @@ class _AddDestinationState extends State<AddDestination> {
           hintText: coreLocalizations.getString(titleFieldName + '-hint'),
         ),
         onSaved: (String value) {
-          this._data[titleFieldName] = value;
+          this._data['title'] = value;
         },
         validator: (String value) {
           if (value.length > 0) {
@@ -69,7 +68,7 @@ class _AddDestinationState extends State<AddDestination> {
           hintText: coreLocalizations.getString(descriptionFieldName + '-hint'),
         ),
         onSaved: (String value) {
-          this._data[descriptionFieldName] = value;
+          this._data['description'] = value;
         },
         validator: (String value) {
           if (value.length > 0) {
@@ -84,7 +83,7 @@ class _AddDestinationState extends State<AddDestination> {
           hintText: coreLocalizations.getString(accessCodeFieldName + '-hint'),
         ),
         onSaved: (String value) {
-          this._data[accessCodeFieldName] = value;
+          this._data['accessCode'] = value;
         },
         validator: (String value) {
           if (value.length > 0) {
@@ -103,10 +102,33 @@ class _AddDestinationState extends State<AddDestination> {
         coreLocalizations.getString('is-required');
   }
 
-  void _submit() {
+  Widget _buildSubmitButton() {
+    if (this._loading) {
+      return RaisedButton(
+        child: CoreLocalizations.of(context).getText('submitting'),
+        onPressed: null,
+      );
+    }
+    return RaisedButton(
+      child: CoreLocalizations.of(context).getText('submit'),
+      onPressed: this._submit,
+    );
+  }
+
+  Future<void> _submit() async {
     this._formKey.currentState.save();
     if (this._formKey.currentState.validate()) {
-      print(this._data);
+      this.setState(() {
+        this._loading = true;
+      });
+      final CreateRepositoryResponse response = await createRepository(
+        title: this._data['title'],
+        description: this._data['description'],
+        accessCode: this._data['accessCode'],
+      );
+      if (response != null) {
+        Navigator.pop(context);
+      }
     }
   }
 }

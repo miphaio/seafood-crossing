@@ -38,12 +38,13 @@ Future<List<FetchRepositoryElement>> fetchRepository() async {
     );
 
     final String identifier = response.data['identifier'].toString();
+    final String accountId = response.data['accountId'].toString();
 
     if (identifier.length < 5) {
       return null;
     }
 
-    await UserInfo.update(identifier);
+    await UserInfo.update(identifier, accountId);
 
     final List<dynamic> elements = response.data['destinations'];
     return elements.map((dynamic element) {

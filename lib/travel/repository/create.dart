@@ -35,12 +35,13 @@ Future<CreateRepositoryResponse> createRepository({
     );
 
     final String identifier = response.data['identifier'].toString();
+    final String accountId = response.data['accountId'].toString();
 
     if (identifier.length < 5) {
       return null;
     }
 
-    await UserInfo.update(identifier);
+    await UserInfo.update(identifier, accountId);
 
     return CreateRepositoryResponse(
       created: response.data['created'] as bool,

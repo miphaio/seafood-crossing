@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/common/account.dart';
-import 'package:seafood_crossing/i18n/core/localizations.dart';
 import 'package:seafood_crossing/travel/add-destination.dart';
 import 'package:seafood_crossing/travel/repository/fetch.dart';
-import 'package:unicorndial/unicorndial.dart';
 
 class TravelPage extends StatefulWidget {
   @override
@@ -41,7 +39,7 @@ class _TravelPageState extends State<TravelPage> {
               MaterialPageRoute(
                 builder: (context) => AddDestination(),
               ),
-            );
+            ).whenComplete(this.fetchDestination);
           },
         ),
       ),

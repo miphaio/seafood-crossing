@@ -19,6 +19,7 @@ const Map<String, String> coreLocalizationChinese = {
   'seafood-crossing': '海鲜之森',
   'start-using': '开始使用',
   'submit': '提交',
+  'submitting': '正在提交...',
   'title': '标题',
   'title-hint': '旅行的原因',
   'travel': '旅行',

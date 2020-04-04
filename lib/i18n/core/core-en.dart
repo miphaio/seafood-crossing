@@ -19,6 +19,7 @@ const Map<String, String> coreLocalizationEnglish = {
   'seafood-crossing': 'Seafood Crossing',
   'start-using': 'Start Using',
   'submit': 'Submit',
+  'submitting': 'Submitting...',
   'title': 'Title',
   'title-hint': 'Purpose of this trip',
   'travel': 'Travel',

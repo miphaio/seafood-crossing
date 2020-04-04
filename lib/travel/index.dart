@@ -9,7 +9,7 @@ class TravelIndex extends StatefulWidget {
 }
 
 class _TravelIndexState extends State<TravelIndex> {
-  List<FetchRepositoryElement> destinations;
+  List<FetchRepositoryElement> _destinations = [];
 
   @override
   void initState() {
@@ -24,8 +24,15 @@ class _TravelIndexState extends State<TravelIndex> {
         title: CoreLocalizations.of(context).getText('travel'),
       ),
       body: AccountWrapper(
-        child: Center(
-          child: CoreLocalizations.of(context).getText('not-implemented'),
+        child: ListView.builder(
+          itemCount: this._destinations.length,
+          itemBuilder: (context, index) {
+            final FetchRepositoryElement element = this._destinations[index];
+            return ListTile(
+              title: Text(element.title),
+              subtitle: Text(element.description),
+            );
+          },
         ),
       ),
     );
@@ -33,6 +40,8 @@ class _TravelIndexState extends State<TravelIndex> {
 
   Future<void> fetchDestination() async {
     final List<FetchRepositoryElement> destinations = await fetchRepository();
-    print(destinations);
+    this.setState(() {
+      this._destinations = destinations;
+    });
   }
 }

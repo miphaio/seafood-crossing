@@ -46,16 +46,16 @@ Future<List<FetchRepositoryElement>> fetchRepository() async {
     await UserInfo.update(identifier);
 
     final List<dynamic> elements = response.data['destinations'];
-    return elements
-        .map((dynamic element) => FetchRepositoryElement(
-              destinationId: response.data['destinationId'].toString(),
-              title: response.data['title'].toString(),
-              description: response.data['description'].toString(),
-              accessCode: response.data['accessCode'].toString(),
-              occupanciesLength: response.data['occupanciesLength'].toInt(),
-              reportLength: response.data['reportLength'].toInt(),
-            ))
-        .toList();
+    return elements.map((dynamic element) {
+      return FetchRepositoryElement(
+        destinationId: element['destinationId'].toString(),
+        title: element['title'].toString(),
+        description: element['description'].toString(),
+        accessCode: element['accessCode'].toString(),
+        occupanciesLength: element['occupanciesLength'] as int,
+        reportLength: element['reportLength'] as int,
+      );
+    }).toList();
   } catch (e) {
     print(e);
     return null;

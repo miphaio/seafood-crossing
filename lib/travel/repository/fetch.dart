@@ -4,20 +4,26 @@ import 'package:seafood_crossing/util/device-info.dart';
 import 'package:seafood_crossing/util/path.dart';
 import 'package:seafood_crossing/util/user-info.dart';
 
-class FetchRepositoryResponse {
-  final bool created;
+class FetchRepositoryElement {
+  final String destinationId;
+  final String title;
+  final String description;
+  final String accessCode;
+  final int occupanciesLength;
+  final int reportLength;
 
-  FetchRepositoryResponse({
-    @required this.created,
+  FetchRepositoryElement({
+    @required this.destinationId,
+    @required this.title,
+    @required this.description,
+    @required this.accessCode,
+    @required this.occupanciesLength,
+    @required this.reportLength,
   });
 }
 
-Future<FetchRepositoryResponse> fetchRepository({
-  @required String title,
-  @required String description,
-  @required String accessCode,
-}) async {
-  final String target = joinPath(['dev', 'travel', 'destination', 'create']);
+Future<List<FetchRepositoryElement>> fetchRepository() async {
+  final String target = joinPath(['dev', 'travel', 'destination', 'fetch']);
 
   final DeviceInfo deviceInfo = await DeviceInfo.gather();
   final UserInfo userInfo = await UserInfo.gather();
@@ -28,9 +34,6 @@ Future<FetchRepositoryResponse> fetchRepository({
       data: {
         'identifier': userInfo.identifier,
         'device': deviceInfo.toMap(),
-        'title': title,
-        'description': description,
-        'accessCode': accessCode,
       },
     );
 
@@ -42,10 +45,19 @@ Future<FetchRepositoryResponse> fetchRepository({
 
     await UserInfo.update(identifier);
 
-    return FetchRepositoryResponse(
-      created: response.data['created'] as bool,
-    );
+    final List<dynamic> elements = response.data['destinations'];
+    return elements
+        .map((dynamic element) => FetchRepositoryElement(
+              destinationId: response.data['destinationId'].toString(),
+              title: response.data['title'].toString(),
+              description: response.data['description'].toString(),
+              accessCode: response.data['accessCode'].toString(),
+              occupanciesLength: response.data['occupanciesLength'].toInt(),
+              reportLength: response.data['reportLength'].toInt(),
+            ))
+        .toList();
   } catch (e) {
+    print(e);
     return null;
   }
 }

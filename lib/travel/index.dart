@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/common/account.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
+import 'package:seafood_crossing/travel/repository/fetch.dart';
 
 class TravelIndex extends StatefulWidget {
   @override
@@ -8,6 +9,14 @@ class TravelIndex extends StatefulWidget {
 }
 
 class _TravelIndexState extends State<TravelIndex> {
+  List<FetchRepositoryElement> destinations;
+
+  @override
+  void initState() {
+    super.initState();
+    this.fetchDestination();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,5 +29,10 @@ class _TravelIndexState extends State<TravelIndex> {
         ),
       ),
     );
+  }
+
+  Future<void> fetchDestination() async {
+    final List<FetchRepositoryElement> destinations = await fetchRepository();
+    print(destinations);
   }
 }

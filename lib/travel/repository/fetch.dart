@@ -9,7 +9,6 @@ class FetchRepositoryElement {
   final String accountId;
   final String title;
   final String description;
-  final String accessCode;
   final int occupanciesLength;
   final int reportLength;
 
@@ -18,7 +17,6 @@ class FetchRepositoryElement {
     @required this.accountId,
     @required this.title,
     @required this.description,
-    @required this.accessCode,
     @required this.occupanciesLength,
     @required this.reportLength,
   });
@@ -55,7 +53,6 @@ Future<List<FetchRepositoryElement>> fetchRepository() async {
         accountId: element['accountId'].toString(),
         title: element['title'].toString(),
         description: element['description'].toString(),
-        accessCode: element['accessCode'].toString(),
         occupanciesLength: element['occupanciesLength'] as int,
         reportLength: element['reportLength'] as int,
       );

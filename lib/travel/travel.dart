@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/common/account.dart';
 import 'package:seafood_crossing/travel/add-destination.dart';
+import 'package:seafood_crossing/travel/destination.dart';
 import 'package:seafood_crossing/travel/repository/fetch.dart';
 import 'package:seafood_crossing/util/user-info.dart';
 
@@ -40,6 +41,16 @@ class _TravelPageState extends State<TravelPage> {
                   ),
                 ),
                 subtitle: Text(element.description),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Destination(
+                        fetchElement: element,
+                      ),
+                    ),
+                  );
+                },
               );
             },
           ),

@@ -63,15 +63,19 @@ class _TravelPageState extends State<TravelPage> {
     await this.updateAccountId();
     final List<FetchRepositoryElement> destinations = await fetchRepository();
 
-    this.setState(() {
-      this._destinations = destinations;
-    });
+    if (this.mounted) {
+      this.setState(() {
+        this._destinations = destinations;
+      });
+    }
   }
 
   Future<void> updateAccountId() async {
     final UserInfo info = await UserInfo.gather();
-    this.setState(() {
-      this._accountId = info.accountId;
-    });
+    if (this.mounted) {
+      this.setState(() {
+        this._accountId = info.accountId;
+      });
+    }
   }
 }

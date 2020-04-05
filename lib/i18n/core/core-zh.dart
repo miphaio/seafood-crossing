@@ -3,6 +3,8 @@ const Map<String, String> coreLocalizationChinese = {
   'access-code': '密码',
   'access-code-hint': '链接岛屿的密码',
   'account': '账户',
+  'account-identifier': '账户识别码',
+  'account-identifier-extend': '你可以用此识别码在其他设备上使用你的账户',
   'create-destination': '创建新旅行',
   'description': '描述',
   'description-hint': '一些补充信息',
@@ -25,5 +27,6 @@ const Map<String, String> coreLocalizationChinese = {
   'title': '标题',
   'title-hint': '旅行的原因',
   'travel': '旅行',
+  'version-number': '版本',
   'visit': '访问',
 };

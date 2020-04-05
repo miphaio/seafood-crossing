@@ -3,6 +3,9 @@ const Map<String, String> coreLocalizationEnglish = {
   'access-code': 'Access Code',
   'access-code-hint': 'Access Code toward your island',
   'account': 'Account',
+  'account-identifier': 'Account Identifier',
+  'account-identifier-extend':
+      'You can use this identifier to use same account on your other devices',
   'create-destination': 'Create New Destination',
   'description': 'Description',
   'description-hint': 'More information about this trip',
@@ -25,5 +28,6 @@ const Map<String, String> coreLocalizationEnglish = {
   'title': 'Title',
   'title-hint': 'Purpose of this trip',
   'travel': 'Travel',
+  'version-number': 'Version',
   'visit': 'Visit',
 };

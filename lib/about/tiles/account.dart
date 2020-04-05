@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:package_info/package_info.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
-import 'package:seafood_crossing/util/external.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:seafood_crossing/util/user-info.dart';
 
 class AccountAboutTile extends StatefulWidget {
   @override
@@ -10,12 +8,12 @@ class AccountAboutTile extends StatefulWidget {
 }
 
 class _AccountAboutTileState extends State<AccountAboutTile> {
-  String _version;
+  String _identifier;
 
   @override
   void initState() {
     super.initState();
-    this._initPackageInfo();
+    this._initIdentifier();
   }
 
   @override
@@ -23,7 +21,7 @@ class _AccountAboutTileState extends State<AccountAboutTile> {
     final CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
     return Card(
       child: ExpansionTile(
-        leading: Icon(Icons.verified_user),
+        leading: Icon(Icons.outlined_flag),
         title: coreLocalizations.getText('account'),
         children: <Widget>[
           ListTile(
@@ -33,26 +31,20 @@ class _AccountAboutTileState extends State<AccountAboutTile> {
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                coreLocalizations.getText('visit'),
+                Text(this._identifier != null ? this._identifier : '...'),
+                coreLocalizations.getText('account-identifier-extend'),
               ],
             ),
-            onTap: () async {
-              if (await canLaunch(seafoodCrossingGithubUrl)) {
-                await launch(seafoodCrossingGithubUrl);
-              } else {
-                print('123');
-              }
-            },
           ),
         ],
       ),
     );
   }
 
-  Future<void> _initPackageInfo() async {
-    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+  Future<void> _initIdentifier() async {
+    UserInfo userInfo = await UserInfo.gather();
     this.setState(() {
-      this._version = packageInfo.version;
+      this._identifier = userInfo.identifier;
     });
   }
 }

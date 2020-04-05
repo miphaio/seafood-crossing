@@ -1,6 +1,8 @@
 const Map<String, String> coreLocalizationChinese = {
+  'about': '关于',
   'access-code': '密码',
   'access-code-hint': '链接岛屿的密码',
+  'account': '账户',
   'create-destination': '创建新旅行',
   'description': '描述',
   'description-hint': '一些补充信息',

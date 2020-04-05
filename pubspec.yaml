@@ -16,6 +16,7 @@ dependencies:
   device_info: ^0.4.2+1
   dio: ^3.0.9
   flutter_sticky_header: ^0.4.2
+  package_info: ^0.4.0+16
   shared_preferences: ^0.5.6+3
   unicorndial: ^1.1.5
   url_launcher: ^5.4.2

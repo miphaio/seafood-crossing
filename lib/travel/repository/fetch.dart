@@ -6,6 +6,7 @@ import 'package:seafood_crossing/util/user-info.dart';
 
 class FetchRepositoryElement {
   final String destinationId;
+  final String accountId;
   final String title;
   final String description;
   final String accessCode;
@@ -14,6 +15,7 @@ class FetchRepositoryElement {
 
   FetchRepositoryElement({
     @required this.destinationId,
+    @required this.accountId,
     @required this.title,
     @required this.description,
     @required this.accessCode,
@@ -50,6 +52,7 @@ Future<List<FetchRepositoryElement>> fetchRepository() async {
     return elements.map((dynamic element) {
       return FetchRepositoryElement(
         destinationId: element['destinationId'].toString(),
+        accountId: element['accountId'].toString(),
         title: element['title'].toString(),
         description: element['description'].toString(),
         accessCode: element['accessCode'].toString(),

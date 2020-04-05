@@ -10,17 +10,18 @@ class UserInfo {
 
     final String identifier =
         preference.getString(_Seafood_Crossing_Identifier);
+    final String accountId = preference.getString(_Seafood_Crossing_Account_Id);
 
     if (identifier == null) {
       return UserInfo(
         identifier: 'new-user',
-        accountId: null,
+        accountId: accountId,
       );
     }
 
     return UserInfo(
       identifier: identifier,
-      accountId: null,
+      accountId: accountId,
     );
   }
 
@@ -48,6 +49,7 @@ class UserInfo {
 
     await preferences.setString(_Seafood_Crossing_Identifier, identifier);
     await preferences.setString(_Seafood_Crossing_Account_Id, accountId);
+
     return UserInfo(
       identifier: identifier,
       accountId: accountId,

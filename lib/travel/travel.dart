@@ -47,9 +47,10 @@ class _TravelPageState extends State<TravelPage> {
                     MaterialPageRoute(
                       builder: (context) => Destination(
                         fetchElement: element,
+                        isMe: isMe,
                       ),
                     ),
-                  );
+                  ).whenComplete(this.fetchDestination);
                 },
               );
             },

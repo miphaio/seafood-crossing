@@ -5,9 +5,11 @@ import 'package:seafood_crossing/travel/repository/visit.dart';
 
 class Destination extends StatefulWidget {
   final FetchRepositoryElement fetchElement;
+  final bool isMe;
 
   Destination({
     @required this.fetchElement,
+    @required this.isMe,
   });
 
   @override
@@ -24,6 +26,19 @@ class _DestinationState extends State<Destination> {
     return Scaffold(
       appBar: AppBar(
         title: coreLocalizations.getText('destination'),
+        actions: <Widget>[
+          PopupMenuButton<String>(
+            onSelected: (String value) {
+              print(value);
+            },
+            itemBuilder: (BuildContext context) => [
+              PopupMenuItem(
+                value: 'report',
+                child: coreLocalizations.getText('report'),
+              ),
+            ],
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -70,6 +85,10 @@ class _DestinationState extends State<Destination> {
   }
 
   Widget _buildApplyVisitButton(BuildContext context) {
+    if (widget.isMe) {
+      return Container();
+    }
+
     if (this._accessCode != null) {
       return Container();
     }

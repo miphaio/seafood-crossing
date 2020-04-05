@@ -23,6 +23,7 @@ const Map<String, String> coreLocalizationChinese = {
   'occupancy-count': '已占用名额',
   'ok': '好',
   'open-source': '开源',
+  'report': '举报',
   'report-count': '被举报次数',
   'reset-filter': '重置过滤',
   'seafood-crossing': '海鲜之森',

@@ -24,6 +24,7 @@ const Map<String, String> coreLocalizationEnglish = {
   'occupancy-count': 'Occupancy Count',
   'ok': 'OK',
   'open-source': 'Open Source',
+  'report': 'Report',
   'report-count': 'Report Count',
   'reset-filter': 'Reset',
   'seafood-crossing': 'Seafood Crossing',

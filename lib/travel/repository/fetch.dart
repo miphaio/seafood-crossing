@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
+import 'package:package_info/package_info.dart';
 import 'package:seafood_crossing/util/device-info.dart';
 import 'package:seafood_crossing/util/path.dart';
 import 'package:seafood_crossing/util/user-info.dart';
@@ -26,12 +27,14 @@ Future<List<FetchRepositoryElement>> fetchRepository() async {
   final String target = joinPath(['dev', 'travel', 'destination', 'fetch']);
 
   final DeviceInfo deviceInfo = await DeviceInfo.gather();
+  final PackageInfo packageInfo = await PackageInfo.fromPlatform();
   final UserInfo userInfo = await UserInfo.gather();
 
   try {
     Response response = await Dio().post(
       target,
       data: {
+        'version': packageInfo.version,
         'identifier': userInfo.identifier,
         'device': deviceInfo.toMap(),
       },

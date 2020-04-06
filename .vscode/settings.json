@@ -12,6 +12,7 @@
         "Schyler",
         "Stateful",
         "Subtags",
+        "Xcode",
         "airplanemode",
         "autofocus",
         "cupertino",
@@ -19,11 +20,14 @@
         "interps",
         "libstdc",
         "macos",
+        "mailto",
         "mipha",
         "sqflite",
         "toolchain",
         "unicorndial",
         "vsync",
+        "xcassets",
+        "xcworkspace",
         "youtube"
     ],
     "cSpell.enableFiletypes": [

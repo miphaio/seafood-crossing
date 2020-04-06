@@ -27,7 +27,7 @@ const Map<String, String> coreLocalizationEnglish = {
   'occupancy-count': 'Occupancy Count',
   'ok': 'OK',
   'open-source': 'Open Source',
-  'port-github-issue': 'Post Github Issue',
+  'post-github-issue': 'Post Github Issue',
   'report': 'Report',
   'report-count': 'Report Count',
   'reset-filter': 'Reset',
@@ -43,6 +43,7 @@ const Map<String, String> coreLocalizationEnglish = {
   'title': 'Title',
   'title-hint': 'Purpose of this trip',
   'travel': 'Travel',
+  'unable-to-launch-url': 'Unable to Launch Url',
   'version-number': 'Version',
   'visit': 'Visit',
 };

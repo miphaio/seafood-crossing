@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
 import 'package:seafood_crossing/util/external.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:seafood_crossing/util/path.dart';
 
 class SupportAboutTile extends StatelessWidget {
   @override
@@ -14,15 +14,15 @@ class SupportAboutTile extends StatelessWidget {
         children: <Widget>[
           ListTile(
             dense: true,
-            title: coreLocalizations.getText('github'),
+            title: coreLocalizations.getText('post-github-issue'),
             subtitle: coreLocalizations.getText('visit'),
-            onTap: () async {
-              if (await canLaunch(seafoodCrossingGithubUrl)) {
-                await launch(seafoodCrossingGithubUrl);
-              } else {
-                print('123');
-              }
-            },
+            onTap: () => launchUrl(context, seafoodCrossingGithubIssuesUrl),
+          ),
+          ListTile(
+            dense: true,
+            title: coreLocalizations.getText('send-email'),
+            subtitle: Text('support@mipha.io'),
+            onTap: () => launchUrl(context, sendEmailUrl),
           ),
         ],
       ),

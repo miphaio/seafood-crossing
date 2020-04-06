@@ -26,7 +26,7 @@ const Map<String, String> coreLocalizationChinese = {
   'occupancy-count': '已占用名额',
   'ok': '好',
   'open-source': '开源',
-  'port-github-issue': '提交 Github Issue',
+  'post-github-issue': '提交 Github Issue',
   'report': '举报',
   'report-count': '被举报次数',
   'reset-filter': '重置过滤',
@@ -41,6 +41,7 @@ const Map<String, String> coreLocalizationChinese = {
   'title': '标题',
   'title-hint': '旅行的原因',
   'travel': '旅行',
+  'unable-to-launch-url': '无法访问链接',
   'version-number': '版本',
   'visit': '访问',
 };

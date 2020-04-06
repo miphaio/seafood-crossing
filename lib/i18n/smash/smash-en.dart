@@ -45,4 +45,6 @@ const Map<String, String> smashLocalizationEnglish = {
   '10-pm': '10PM',
   '11-pm': '11PM',
   '12-pm': '12PM',
+  'source-fish-image': 'Fish Image Source',
+  'source-insect-image': 'Insect Image Source',
 };

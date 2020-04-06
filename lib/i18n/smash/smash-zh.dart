@@ -45,4 +45,6 @@ const Map<String, String> smashLocalizationChinese = {
   '10-pm': '下午十点',
   '11-pm': '下午十一点',
   '12-pm': '下午十二点',
+  'source-fish-image': '鱼类图片来源',
+  'source-insect-image': '昆虫图片来源',
 };

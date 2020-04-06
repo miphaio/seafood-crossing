@@ -18,7 +18,7 @@ class VisitRepositoryResponse {
 Future<VisitRepositoryResponse> visitRepository({
   @required String destinationId,
 }) async {
-  final String target = joinPath(['dev', 'travel', 'destination', 'visit']);
+  final String target = joinPath(['travel', 'destination', 'visit']);
 
   final DeviceInfo deviceInfo = await DeviceInfo.gather();
   final PackageInfo packageInfo = await PackageInfo.fromPlatform();

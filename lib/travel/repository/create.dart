@@ -18,7 +18,7 @@ Future<CreateRepositoryResponse> createRepository({
   @required String description,
   @required String accessCode,
 }) async {
-  final String target = joinPath(['dev', 'travel', 'destination', 'create']);
+  final String target = joinPath(['travel', 'destination', 'create']);
 
   final DeviceInfo deviceInfo = await DeviceInfo.gather();
   final PackageInfo packageInfo = await PackageInfo.fromPlatform();

@@ -24,7 +24,7 @@ class FetchRepositoryElement {
 }
 
 Future<List<FetchRepositoryElement>> fetchRepository() async {
-  final String target = joinPath(['dev', 'travel', 'destination', 'fetch']);
+  final String target = joinPath(['travel', 'destination', 'fetch']);
 
   final DeviceInfo deviceInfo = await DeviceInfo.gather();
   final PackageInfo packageInfo = await PackageInfo.fromPlatform();

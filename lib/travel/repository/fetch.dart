@@ -31,7 +31,11 @@ Future<List<FetchRepositoryElement>> fetchRepository() async {
   final UserInfo userInfo = await UserInfo.gather();
 
   try {
-    Response response = await Dio().post(
+    Response response = await Dio(
+      BaseOptions(
+        connectTimeout: 5000,
+      ),
+    ).post(
       target,
       data: {
         'version': packageInfo.version,

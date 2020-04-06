@@ -60,8 +60,8 @@ Future<List<FetchRepositoryElement>> fetchRepository() async {
         reportLength: element['reportLength'] as int,
       );
     }).toList();
-  } catch (e) {
-    print(e);
+  } on DioError catch (error) {
+    print(error.response);
     return null;
   }
 }

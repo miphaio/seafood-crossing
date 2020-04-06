@@ -48,7 +48,8 @@ Future<VisitRepositoryResponse> visitRepository({
       succeed: response.data['succeed'] as bool,
       accessCode: response.data['accessCode'].toString(),
     );
-  } catch (e) {
+  } on DioError catch (error) {
+    print(error.response);
     return null;
   }
 }

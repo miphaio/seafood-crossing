@@ -49,7 +49,8 @@ Future<CreateRepositoryResponse> createRepository({
     return CreateRepositoryResponse(
       created: response.data['created'] as bool,
     );
-  } catch (e) {
+  } on DioError catch (error) {
+    print(error.response);
     return null;
   }
 }

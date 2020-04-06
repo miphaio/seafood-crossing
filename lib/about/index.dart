@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:seafood_crossing/about/tiles/about.dart';
 import 'package:seafood_crossing/about/tiles/account.dart';
 import 'package:seafood_crossing/about/tiles/open-source.dart';
+import 'package:seafood_crossing/about/tiles/support.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
 
 class AboutIndex extends StatelessWidget {
@@ -16,6 +17,7 @@ class AboutIndex extends StatelessWidget {
         children: <Widget>[
           AccountAboutTile(),
           OpenSourceAboutTile(),
+          SupportAboutTile(),
           AboutAboutTile(),
         ],
       ),

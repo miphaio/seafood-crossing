@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:package_info/package_info.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
@@ -28,6 +29,15 @@ class _AboutAboutTileState extends State<AboutAboutTile> {
             dense: true,
             title: coreLocalizations.getText('version-number'),
             subtitle: Text(this._version != null ? this._version : '...'),
+          ),
+          ListTile(
+            dense: true,
+            title: coreLocalizations.getText('mode'),
+            subtitle: Text(
+              kReleaseMode
+                  ? coreLocalizations.getString('mode-release')
+                  : coreLocalizations.getString('mode-development'),
+            ),
           ),
         ],
       ),

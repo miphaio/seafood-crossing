@@ -14,6 +14,7 @@ class _TravelPageState extends State<TravelPage> {
   List<FetchRepositoryElement> _destinations = [];
 
   String _accountId;
+  bool _loading = true;
 
   @override
   void initState() {
@@ -23,6 +24,7 @@ class _TravelPageState extends State<TravelPage> {
 
   @override
   Widget build(BuildContext context) {
+    final CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
     if (this._destinations == null) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.center,
@@ -30,16 +32,11 @@ class _TravelPageState extends State<TravelPage> {
         children: <Widget>[
           Card(
             child: ListTile(
-              leading: Icon(Icons.info),
-              title: CoreLocalizations.of(context)
-                  .getText('first-time-using-title'),
-              subtitle: CoreLocalizations.of(context)
-                  .getText('first-time-using-subtitle'),
+              leading: Icon(Icons.bug_report),
+              isThreeLine: true,
+              title: coreLocalizations.getText('server-went-wrong-title'),
+              subtitle: coreLocalizations.getText('server-went-wrong-subtitle'),
             ),
-          ),
-          RaisedButton(
-            child: CoreLocalizations.of(context).getText('start-using'),
-            onPressed: () async {},
           ),
         ],
       );
@@ -80,27 +77,42 @@ class _TravelPageState extends State<TravelPage> {
           },
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => AddDestination(),
-            ),
-          ).whenComplete(this.fetchDestination);
-        },
-      ),
+      floatingActionButton: this._buildFloatingButton(),
+    );
+  }
+
+  Widget _buildFloatingButton() {
+    if (this._loading) {
+      return null;
+    }
+    return FloatingActionButton(
+      child: Icon(Icons.add),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AddDestination(),
+          ),
+        ).whenComplete(this.fetchDestination);
+      },
     );
   }
 
   Future<void> fetchDestination() async {
     await this.updateAccountId();
+
+    if (this.mounted) {
+      this.setState(() {
+        this._loading = true;
+      });
+    }
+
     final List<FetchRepositoryElement> destinations = await fetchRepository();
 
     if (this.mounted) {
       this.setState(() {
         this._destinations = destinations;
+        this._loading = false;
       });
     }
   }

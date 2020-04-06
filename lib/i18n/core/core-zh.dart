@@ -30,6 +30,8 @@ const Map<String, String> coreLocalizationChinese = {
   'report-count': '被举报次数',
   'reset-filter': '重置过滤',
   'seafood-crossing': '海鲜之森',
+  'server-went-wrong-title': '服务器看起来有些不对头。',
+  'server-went-wrong-subtitle': '你可以和我们联系来获得更多信息，欲如此做，访问 海鲜之森 -> 开源 -> 支持',
   'start-using': '开始使用',
   'submit': '提交',
   'submitting': '正在提交...',

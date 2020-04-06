@@ -31,6 +31,9 @@ const Map<String, String> coreLocalizationEnglish = {
   'report-count': 'Report Count',
   'reset-filter': 'Reset',
   'seafood-crossing': 'Seafood Crossing',
+  'server-went-wrong-title': 'Something went wrong on our server.',
+  'server-went-wrong-subtitle':
+      'Connect us for more help, visit Seafood Crossing -> Open Source -> Get Help',
   'start-using': 'Start Using',
   'submit': 'Submit',
   'submitting': 'Submitting...',

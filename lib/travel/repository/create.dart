@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:package_info/package_info.dart';
+import 'package:seafood_crossing/common/repository/options.dart';
 import 'package:seafood_crossing/util/device-info.dart';
 import 'package:seafood_crossing/util/path.dart';
 import 'package:seafood_crossing/util/user-info.dart';
@@ -25,11 +26,7 @@ Future<CreateRepositoryResponse> createRepository({
   final UserInfo userInfo = await UserInfo.gather();
 
   try {
-    Response response = await Dio(
-      BaseOptions(
-        connectTimeout: 5000,
-      ),
-    ).post(
+    Response response = await Dio(dioBaseOptions).post(
       target,
       data: {
         'version': packageInfo.version,

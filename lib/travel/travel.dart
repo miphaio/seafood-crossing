@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:seafood_crossing/common/account.dart';
+import 'package:seafood_crossing/i18n/core/localizations.dart';
 import 'package:seafood_crossing/travel/add-destination.dart';
 import 'package:seafood_crossing/travel/destination.dart';
 import 'package:seafood_crossing/travel/repository/fetch.dart';
@@ -23,50 +23,73 @@ class _TravelPageState extends State<TravelPage> {
 
   @override
   Widget build(BuildContext context) {
-    return AccountWrapper(
-      child: Scaffold(
-        body: RefreshIndicator(
-          onRefresh: this.fetchDestination,
-          child: ListView.builder(
-            itemCount: this._destinations.length,
-            itemBuilder: (context, index) {
-              final FetchRepositoryElement element = this._destinations[index];
-              final bool isMe = element.accountId == this._accountId;
-              return ListTile(
-                leading: Icon(Icons.airplanemode_active),
-                title: Text(
-                  element.title,
-                  style: TextStyle(
-                    color: isMe ? Theme.of(context).errorColor : null,
-                  ),
-                ),
-                subtitle: Text(element.description),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Destination(
-                        fetchElement: element,
-                        isMe: isMe,
-                      ),
-                    ),
-                  ).whenComplete(this.fetchDestination);
-                },
-              );
-            },
+    if (this._destinations == null) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Card(
+            child: ListTile(
+              leading: Icon(Icons.info),
+              title: CoreLocalizations.of(context)
+                  .getText('first-time-using-title'),
+              subtitle: CoreLocalizations.of(context)
+                  .getText('first-time-using-subtitle'),
+            ),
           ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => AddDestination(),
+          RaisedButton(
+            child: CoreLocalizations.of(context).getText('start-using'),
+            onPressed: () async {},
+          ),
+        ],
+      );
+    }
+    return this._buildTravel();
+  }
+
+  Widget _buildTravel() {
+    return Scaffold(
+      body: RefreshIndicator(
+        onRefresh: this.fetchDestination,
+        child: ListView.builder(
+          itemCount: this._destinations.length,
+          itemBuilder: (context, index) {
+            final FetchRepositoryElement element = this._destinations[index];
+            final bool isMe = element.accountId == this._accountId;
+            return ListTile(
+              leading: Icon(Icons.airplanemode_active),
+              title: Text(
+                element.title,
+                style: TextStyle(
+                  color: isMe ? Theme.of(context).errorColor : null,
+                ),
               ),
-            ).whenComplete(this.fetchDestination);
+              subtitle: Text(element.description),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Destination(
+                      fetchElement: element,
+                      isMe: isMe,
+                    ),
+                  ),
+                ).whenComplete(this.fetchDestination);
+              },
+            );
           },
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AddDestination(),
+            ),
+          ).whenComplete(this.fetchDestination);
+        },
       ),
     );
   }

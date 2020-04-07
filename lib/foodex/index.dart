@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:seafood_crossing/foodex/components/list.dart';
-import 'package:seafood_crossing/foodex/data/insect.dart';
 import 'package:seafood_crossing/foodex/tabs/fish.dart';
+import 'package:seafood_crossing/foodex/tabs/insect.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
 import 'package:seafood_crossing/i18n/smash/localizations.dart';
 
@@ -95,9 +94,7 @@ class _FoodexIndexState extends State<FoodexIndex>
         controller: _tabController,
         children: <Widget>[
           FoodexFishTab(),
-          FoodexList(
-            items: insectData,
-          ),
+          FoodexInsectTab(),
         ],
       ),
     );

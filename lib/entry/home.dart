@@ -12,7 +12,7 @@ class SeafoodCrossingHome extends StatefulWidget {
 }
 
 class _SeafoodCrossingHomeState extends State<SeafoodCrossingHome> {
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   @override
   Widget build(BuildContext context) {

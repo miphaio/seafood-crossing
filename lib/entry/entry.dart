@@ -24,6 +24,7 @@ class SeafoodCrossingEntry extends StatelessWidget {
       ],
       title: 'Seafood Crossing',
       theme: ThemeData(),
+      darkTheme: ThemeData.dark(),
       routes: {
         SeafoodCrossingHome.route: (context) => SeafoodCrossingHome(),
       },

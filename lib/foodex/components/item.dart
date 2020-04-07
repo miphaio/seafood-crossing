@@ -4,6 +4,7 @@ import 'package:seafood_crossing/foodex/entity/item.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
 import 'package:seafood_crossing/i18n/foodex/localizations.dart';
 import 'package:seafood_crossing/i18n/smash/localizations.dart';
+import 'package:seafood_crossing/i18n/unit/localizations.dart';
 
 class FoodexItem extends StatelessWidget {
   final FoodexItemEntity item;
@@ -21,7 +22,7 @@ class FoodexItem extends StatelessWidget {
         height: 32,
       ),
       title: FoodexLocalizations.of(context).getText(this.item.name),
-      subtitle: Text(this.item.price.toString()),
+      subtitle: UnitLocalizations.of(context).getBellText(this.item.price),
       children: <Widget>[
         this._buildMonthTile(context),
         this._buildTimeTile(context),

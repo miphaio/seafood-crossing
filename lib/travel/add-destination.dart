@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
+import 'package:seafood_crossing/travel/decalre/category.dart';
 import 'package:seafood_crossing/travel/repository/create.dart';
 
 class AddDestination extends StatefulWidget {
@@ -122,6 +123,7 @@ class _AddDestinationState extends State<AddDestination> {
         this._loading = true;
       });
       final CreateRepositoryResponse response = await createRepository(
+        category: DestinationCategory.MABEL,
         title: this._data['title'],
         description: this._data['description'],
         accessCode: this._data['accessCode'],

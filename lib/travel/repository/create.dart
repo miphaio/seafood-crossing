@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:package_info/package_info.dart';
 import 'package:seafood_crossing/common/repository/options.dart';
+import 'package:seafood_crossing/travel/decalre/category.dart';
 import 'package:seafood_crossing/util/device-info.dart';
 import 'package:seafood_crossing/util/path.dart';
 import 'package:seafood_crossing/util/user-info.dart';
@@ -15,6 +16,7 @@ class CreateRepositoryResponse {
 }
 
 Future<CreateRepositoryResponse> createRepository({
+  @required DestinationCategory category,
   @required String title,
   @required String description,
   @required String accessCode,
@@ -29,6 +31,7 @@ Future<CreateRepositoryResponse> createRepository({
     Response response = await Dio(dioBaseOptions).post(
       target,
       data: {
+        'category': category.value,
         'version': packageInfo.version,
         'identifier': userInfo.identifier,
         'device': deviceInfo.toMap(),

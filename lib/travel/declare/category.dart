@@ -16,4 +16,17 @@ class DestinationCategory extends Enum<String> {
   static const DestinationCategory SAHARAH =
       const DestinationCategory("SAHARAH");
   static const DestinationCategory OTHER = const DestinationCategory("OTHER");
+
+  static includes(String value) {
+    return value == DestinationCategory.TURNIP_BUY.value ||
+        value == DestinationCategory.TURNIP_SELL.value ||
+        value == DestinationCategory.TOUR.value ||
+        value == DestinationCategory.MABEL.value ||
+        value == DestinationCategory.SAHARAH.value ||
+        value == DestinationCategory.OTHER.value;
+  }
+
+  static from(String value) {
+    return DestinationCategory(value);
+  }
 }

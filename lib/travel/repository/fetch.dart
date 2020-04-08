@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:package_info/package_info.dart';
 import 'package:seafood_crossing/common/repository/options.dart';
+import 'package:seafood_crossing/travel/declare/category.dart';
 import 'package:seafood_crossing/util/device-info.dart';
 import 'package:seafood_crossing/util/path.dart';
 import 'package:seafood_crossing/util/user-info.dart';
@@ -9,6 +10,7 @@ import 'package:seafood_crossing/util/user-info.dart';
 class FetchRepositoryElement {
   final String destinationId;
   final String accountId;
+  final DestinationCategory category;
   final String title;
   final String description;
   final int occupanciesLength;
@@ -17,6 +19,7 @@ class FetchRepositoryElement {
   FetchRepositoryElement({
     @required this.destinationId,
     @required this.accountId,
+    @required this.category,
     @required this.title,
     @required this.description,
     @required this.occupanciesLength,
@@ -51,10 +54,18 @@ Future<List<FetchRepositoryElement>> fetchRepository() async {
     await UserInfo.update(identifier, accountId);
 
     final List<dynamic> elements = response.data['destinations'];
+    final String category = response.data['category'].toString();
+
+    if (!DestinationCategory.includes(category)) {
+      print(category);
+      return null;
+    }
+
     return elements.map((dynamic element) {
       return FetchRepositoryElement(
         destinationId: element['destinationId'].toString(),
         accountId: element['accountId'].toString(),
+        category: DestinationCategory.from(category),
         title: element['title'].toString(),
         description: element['description'].toString(),
         occupanciesLength: element['occupanciesLength'] as int,

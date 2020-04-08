@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
-import 'package:seafood_crossing/travel/decalre/category.dart';
+import 'package:seafood_crossing/travel/declare/category.dart';
 import 'package:seafood_crossing/travel/repository/create.dart';
 
 class AddDestination extends StatefulWidget {

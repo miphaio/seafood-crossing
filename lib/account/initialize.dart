@@ -23,6 +23,7 @@ class _InitializeAccountState extends State<InitializeAccount> {
         children: <Widget>[
           Card(
             child: ListTile(
+              isThreeLine: true,
               leading: Icon(Icons.data_usage),
               title: coreLocalizations.getText('initialize-account-title'),
               subtitle:

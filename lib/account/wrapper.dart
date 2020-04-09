@@ -22,7 +22,7 @@ class _AccountWrapperState extends State<AccountWrapper> {
   @override
   void initState() {
     super.initState();
-    this.checkUserInfo();
+    this._checkUserInfo();
   }
 
   @override
@@ -61,14 +61,14 @@ class _AccountWrapperState extends State<AccountWrapper> {
                   return InitializeAccount();
                 },
               ),
-            );
+            ).whenComplete(this._checkUserInfo);
           },
         ),
       ],
     );
   }
 
-  Future<void> checkUserInfo() async {
+  Future<void> _checkUserInfo() async {
     final bool checkResult = await UserInfo.check();
     this.setState(() {
       this._accountAvailable = checkResult;

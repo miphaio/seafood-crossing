@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:package_info/package_info.dart';
 import 'package:seafood_crossing/common/repository/options.dart';
-import 'package:seafood_crossing/travel/declare/category.dart';
+import 'package:seafood_crossing/travel/category/enum.dart';
 import 'package:seafood_crossing/util/device-info.dart';
 import 'package:seafood_crossing/util/path.dart';
 import 'package:seafood_crossing/util/user-info.dart';

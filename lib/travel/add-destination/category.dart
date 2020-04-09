@@ -17,11 +17,8 @@ class AddDestinationCategory extends StatelessWidget {
   }
 
   List<Widget> _buildCategories() {
-    return DestinationCategory.list.map((DestinationCategory category) {
-      return ListTile(
-        title: Text(category.value),
-        onTap: () {},
-      );
-    }).toList();
+    return [
+      ListTile(),
+    ];
   }
 }

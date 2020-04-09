@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
-import 'package:seafood_crossing/travel/add-destination.dart';
+import 'package:seafood_crossing/travel/add-destination/category.dart';
 import 'package:seafood_crossing/travel/destination.dart';
 import 'package:seafood_crossing/travel/repository/fetch.dart';
 import 'package:seafood_crossing/util/user-info.dart';
@@ -91,7 +91,7 @@ class _TravelPageState extends State<TravelPage> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => AddDestination(),
+            builder: (context) => AddDestinationCategory(),
           ),
         ).whenComplete(this.fetchDestination);
       },

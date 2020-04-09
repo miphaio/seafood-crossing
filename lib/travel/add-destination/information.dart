@@ -3,12 +3,13 @@ import 'package:seafood_crossing/i18n/core/localizations.dart';
 import 'package:seafood_crossing/travel/declare/category.dart';
 import 'package:seafood_crossing/travel/repository/create.dart';
 
-class AddDestination extends StatefulWidget {
+class AddDestinationInformation extends StatefulWidget {
   @override
-  _AddDestinationState createState() => _AddDestinationState();
+  _AddDestinationInformationState createState() =>
+      _AddDestinationInformationState();
 }
 
-class _AddDestinationState extends State<AddDestination> {
+class _AddDestinationInformationState extends State<AddDestinationInformation> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final Map<String, String> _data = {};
   bool _loading = false;

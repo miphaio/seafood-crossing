@@ -54,18 +54,12 @@ Future<List<FetchRepositoryElement>> fetchRepository() async {
     await UserInfo.update(identifier, accountId);
 
     final List<dynamic> elements = response.data['destinations'];
-    final String category = response.data['category'].toString();
-
-    if (!DestinationCategory.includes(category)) {
-      print(category);
-      return null;
-    }
 
     return elements.map((dynamic element) {
       return FetchRepositoryElement(
         destinationId: element['destinationId'].toString(),
         accountId: element['accountId'].toString(),
-        category: DestinationCategory.from(category),
+        category: DestinationCategory.from(element['category']),
         title: element['title'].toString(),
         description: element['description'].toString(),
         occupanciesLength: element['occupanciesLength'] as int,

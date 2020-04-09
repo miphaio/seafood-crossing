@@ -55,6 +55,8 @@ class _InitializeAccountState extends State<InitializeAccount> {
     return <Widget>[
       TextFormField(
         decoration: InputDecoration(
+          icon: Icon(Icons.person),
+          prefix: Text('SW-'),
           labelText: coreLocalizations.getString(profileFieldName),
           hintText: coreLocalizations.getString(profileFieldName + '-hint'),
         ),
@@ -62,10 +64,18 @@ class _InitializeAccountState extends State<InitializeAccount> {
           this._data[profileFieldName] = value;
         },
         validator: (String value) {
-          if (value.length > 0) {
+          if (value.length == 0) {
+            return this._buildRequiredMessage(context, profileFieldName);
+          }
+
+          final String removeDashed = value.replaceAll('-', '');
+          final RegExp pattern = RegExp(r'^[0-9]{12}$');
+
+          if (pattern.hasMatch(removeDashed)) {
             return null;
           }
-          return this._buildRequiredMessage(context, profileFieldName);
+
+          return this._buildPatternNotMatchedMessage(context, profileFieldName);
         },
       ),
     ];
@@ -91,15 +101,24 @@ class _InitializeAccountState extends State<InitializeAccount> {
         coreLocalizations.getString('is-required');
   }
 
+  String _buildPatternNotMatchedMessage(
+      BuildContext context, String fieldName) {
+    final CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
+    return coreLocalizations.getString(fieldName) +
+        ' ' +
+        coreLocalizations.getString('has-invalid-pattern');
+  }
+
   Future<void> _submit() async {
     this._formKey.currentState.save();
     if (this._formKey.currentState.validate()) {
       this.setState(() {
         this._loading = true;
       });
+
+      final String identifier = this._data['profile-identifier'];
       final InitializeAccountRepositoryResponse response =
-          await initializeAccountRepository(
-              profileIdentifier: this._data['profile-identifier']);
+          await initializeAccountRepository(profileIdentifier: identifier);
       if (response != null) {
         Navigator.pop(context);
       }

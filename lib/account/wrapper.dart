@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seafood_crossing/account/initialize.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
 import 'package:seafood_crossing/util/user-info.dart';
 
@@ -52,11 +53,15 @@ class _AccountWrapperState extends State<AccountWrapper> {
         ),
         RaisedButton(
           child: CoreLocalizations.of(context).getText('start-using'),
-          onPressed: () async {
-            await UserInfo.init();
-            this.setState(() {
-              this._accountAvailable = true;
-            });
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) {
+                  return InitializeAccount();
+                },
+              ),
+            );
           },
         ),
       ],

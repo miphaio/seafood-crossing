@@ -4,9 +4,11 @@ import 'package:seafood_crossing/util/user-info.dart';
 
 class AccountWrapper extends StatefulWidget {
   final Widget child;
+  final Widget placeholder;
 
   AccountWrapper({
     @required this.child,
+    this.placeholder,
   });
 
   @override
@@ -25,7 +27,10 @@ class _AccountWrapperState extends State<AccountWrapper> {
   @override
   Widget build(BuildContext context) {
     if (this._accountAvailable == null) {
-      return Container();
+      if (widget.placeholder == null) {
+        return Container();
+      }
+      return widget.placeholder;
     }
 
     if (this._accountAvailable) {

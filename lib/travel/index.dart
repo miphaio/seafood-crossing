@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:seafood_crossing/common/account.dart';
+import 'package:seafood_crossing/account/wrapper.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
 import 'package:seafood_crossing/travel/travel.dart';
 

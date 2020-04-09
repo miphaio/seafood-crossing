@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
+import 'package:seafood_crossing/i18n/travel/localizations.dart';
+import 'package:seafood_crossing/travel/category/data.dart';
 import 'package:seafood_crossing/travel/category/enum.dart';
 import 'package:seafood_crossing/travel/repository/create.dart';
 
 class AddDestinationInformation extends StatefulWidget {
+  final DestinationCategory category;
+
+  AddDestinationInformation({
+    @required this.category,
+  });
+
   @override
   _AddDestinationInformationState createState() =>
       _AddDestinationInformationState();
@@ -16,12 +24,26 @@ class _AddDestinationInformationState extends State<AddDestinationInformation> {
 
   @override
   Widget build(BuildContext context) {
+    final TravelLocalizations travelLocalizations =
+        TravelLocalizations.of(context);
+
+    final String titleKey = destinationDestinationTitle[widget.category];
+    final String subtitleKey = destinationDestinationSubtitle[widget.category];
+    final IconData icon = destinationDestinationIcon[widget.category];
+
     return Scaffold(
       appBar: AppBar(
         title: CoreLocalizations.of(context).getText('create-destination'),
       ),
       body: ListView(
         children: <Widget>[
+          Card(
+            child: ListTile(
+              leading: Icon(icon),
+              title: travelLocalizations.getText(titleKey),
+              subtitle: travelLocalizations.getText(subtitleKey),
+            ),
+          ),
           Container(
             padding: const EdgeInsets.fromLTRB(12.0, 5.0, 12.0, 5.0),
             child: Column(
@@ -124,7 +146,7 @@ class _AddDestinationInformationState extends State<AddDestinationInformation> {
         this._loading = true;
       });
       final CreateRepositoryResponse response = await createRepository(
-        category: DestinationCategory.MABEL,
+        category: widget.category,
         title: this._data['title'],
         description: this._data['description'],
         accessCode: this._data['accessCode'],

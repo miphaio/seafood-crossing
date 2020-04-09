@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
+import 'package:seafood_crossing/i18n/travel/localizations.dart';
+import 'package:seafood_crossing/travel/category/data.dart';
+import 'package:seafood_crossing/travel/category/enum.dart';
 import 'package:seafood_crossing/travel/repository/fetch.dart';
 import 'package:seafood_crossing/travel/repository/visit.dart';
 
@@ -23,6 +26,14 @@ class _DestinationState extends State<Destination> {
   @override
   Widget build(BuildContext context) {
     final CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
+    final TravelLocalizations travelLocalizations =
+        TravelLocalizations.of(context);
+
+    final DestinationCategory category = widget.fetchElement.category;
+    final String titleKey = destinationDestinationTitle[category];
+    final String subtitleKey = destinationDestinationReceiverSubtitle[category];
+    final IconData icon = destinationDestinationIcon[category];
+
     return Scaffold(
       appBar: AppBar(
         title: coreLocalizations.getText('destination'),
@@ -44,6 +55,13 @@ class _DestinationState extends State<Destination> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
+            Card(
+              child: ListTile(
+                leading: Icon(icon),
+                title: travelLocalizations.getText(titleKey),
+                subtitle: travelLocalizations.getText(subtitleKey),
+              ),
+            ),
             ListTile(
               leading: Icon(Icons.title),
               title: coreLocalizations.getText('title'),

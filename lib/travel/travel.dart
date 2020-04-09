@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
 import 'package:seafood_crossing/travel/add-destination/category.dart';
+import 'package:seafood_crossing/travel/category/data.dart';
 import 'package:seafood_crossing/travel/destination.dart';
 import 'package:seafood_crossing/travel/repository/fetch.dart';
 import 'package:seafood_crossing/util/user-info.dart';
@@ -50,11 +51,14 @@ class _TravelPageState extends State<TravelPage> {
         onRefresh: this.fetchDestination,
         child: ListView.builder(
           itemCount: this._destinations.length,
-          itemBuilder: (context, index) {
+          itemBuilder: (BuildContext context, int index) {
             final FetchRepositoryElement element = this._destinations[index];
             final bool isMe = element.accountId == this._accountId;
+
+            final IconData icon = destinationDestinationIcon[element.category];
+
             return ListTile(
-              leading: Icon(Icons.airplanemode_active),
+              leading: Icon(icon),
               title: Text(
                 element.title,
                 style: TextStyle(

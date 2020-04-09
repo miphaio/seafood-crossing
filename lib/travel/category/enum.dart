@@ -26,7 +26,7 @@ class DestinationCategory extends Enum<String> {
     DestinationCategory.OTHER,
   ];
 
-  static includes(String value) {
+  static bool includes(String value) {
     return value == DestinationCategory.TURNIP_BUY.value ||
         value == DestinationCategory.TURNIP_SELL.value ||
         value == DestinationCategory.TOUR.value ||
@@ -35,7 +35,25 @@ class DestinationCategory extends Enum<String> {
         value == DestinationCategory.OTHER.value;
   }
 
-  static from(String value) {
-    return DestinationCategory(value);
+  factory DestinationCategory.from(String value) {
+    if (value == DestinationCategory.TURNIP_BUY.value) {
+      return DestinationCategory.TURNIP_BUY;
+    }
+    if (value == DestinationCategory.TURNIP_SELL.value) {
+      return DestinationCategory.TURNIP_SELL;
+    }
+    if (value == DestinationCategory.TOUR.value) {
+      return DestinationCategory.TOUR;
+    }
+    if (value == DestinationCategory.MABEL.value) {
+      return DestinationCategory.MABEL;
+    }
+    if (value == DestinationCategory.SAHARAH.value) {
+      return DestinationCategory.SAHARAH;
+    }
+    if (value == DestinationCategory.OTHER.value) {
+      return DestinationCategory.OTHER;
+    }
+    return DestinationCategory.OTHER;
   }
 }

@@ -33,7 +33,7 @@ class _AddDestinationInformationState extends State<AddDestinationInformation> {
 
     return Scaffold(
       appBar: AppBar(
-        title: CoreLocalizations.of(context).getText('create-destination'),
+        title: travelLocalizations.getText('destination-details'),
       ),
       body: ListView(
         children: <Widget>[

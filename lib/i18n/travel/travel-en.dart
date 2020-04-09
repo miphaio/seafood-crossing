@@ -1,1 +1,23 @@
-const Map<String, String> travelLocalizationEnglish = {};
+const Map<String, String> travelLocalizationEnglish = {
+  'select-category': 'Select Category',
+  'destination-details': 'Destination Details',
+  'turnip-buy-title': 'Turnips Available to Buy',
+  'turnip-buy-subtitle': 'There are Turnips available to buy on your island.',
+  'turnip-buy-receiver-subtitle':
+      'There are Turnips available to buy on this island.',
+  'turnip-sell-title': 'Good deal for Turnips',
+  'turnip-sell-subtitle': 'Your island has a good deal for Turnips',
+  'turnip-sell-receiver-subtitle': 'This island has a good deal for Turnips',
+  'tour-title': 'Tour',
+  'tour-subtitle': 'Your island is open for tourist.',
+  'tour-receiver-subtitle': 'This island is open for tourist.',
+  'mabel-title': 'Mabel',
+  'mabel-subtitle': 'Mabel is selling clothes on your island.',
+  'mabel-receiver-subtitle': 'Mabel is selling clothes on this island.',
+  'saharah-title': 'Saharah',
+  'saharah-subtitle': 'Saharah is selling carpet on your island.',
+  'saharah-receiver-subtitle': 'Saharah is selling carpet on this island.',
+  'other-title': 'Other',
+  'other-subtitle': 'Your island is a must come place due to other reasons.',
+  'other-receiver-subtitle': 'This island is open for other reasons.',
+};

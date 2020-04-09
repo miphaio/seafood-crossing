@@ -1,1 +1,22 @@
-const Map<String, String> travelLocalizationChinese = {};
+const Map<String, String> travelLocalizationChinese = {
+  'select-category': '选择旅行类别',
+  'destination-details': '旅行的细节',
+  'turnip-buy-title': '待售大头菜',
+  'turnip-buy-subtitle': '曹卖正在你的岛上销售大头菜。',
+  'turnip-buy-receiver-subtitle': '曹卖正在该岛上销售大头菜。',
+  'turnip-sell-title': '高价大头菜',
+  'turnip-sell-subtitle': '你的岛正在高价收购大头菜。',
+  'turnip-sell-receiver-subtitle': '该岛正在高价收购大头菜。',
+  'tour-title': '观光',
+  'tour-subtitle': '你的岛想迎接一些观光客。',
+  'tour-receiver-subtitle': '该岛正在开放迎接观光客。',
+  'mabel-title': '娟儿',
+  'mabel-subtitle': '娟儿正在你的岛上销售服饰。',
+  'mabel-receiver-subtitle': '娟儿正在该岛上销售服饰。',
+  'saharah-title': '骆岚',
+  'saharah-subtitle': '骆岚正在你的岛上销售地毯。',
+  'saharah-receiver-subtitle': '骆岚正在该岛上销售地毯。',
+  'other-title': '其他',
+  'other-subtitle': '你的岛正在因为其他原因开放。',
+  'other-receiver-subtitle': '这座岛正在因为其他原因开放。',
+};

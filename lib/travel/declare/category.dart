@@ -17,6 +17,15 @@ class DestinationCategory extends Enum<String> {
       const DestinationCategory("SAHARAH");
   static const DestinationCategory OTHER = const DestinationCategory("OTHER");
 
+  static final List<DestinationCategory> list = [
+    DestinationCategory.TURNIP_BUY,
+    DestinationCategory.TURNIP_SELL,
+    DestinationCategory.TOUR,
+    DestinationCategory.MABEL,
+    DestinationCategory.SAHARAH,
+    DestinationCategory.OTHER,
+  ];
+
   static includes(String value) {
     return value == DestinationCategory.TURNIP_BUY.value ||
         value == DestinationCategory.TURNIP_SELL.value ||

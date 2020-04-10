@@ -6,13 +6,20 @@ const Map<String, String> coreLocalizationEnglish = {
       'Access Code should be 5 characters long includes letters and numbers',
   'account': 'Account',
   'account-identifier': 'Account Identifier',
+  'account-identifier-hint': 'Account Identifier',
   'account-identifier-extend':
       'You can use this identifier to use same account on your other devices',
   'account-identifier-not-exist':
       'This device does not bind with any account identifier',
+  'account-identifier-not-found': 'Account Identifier Not Found',
+  'account-identifier-not-found-content':
+      'The account identifier you entered not found in our database, try to correct and submit again',
   'apply-visit': 'Apply Visit',
   'applying-visit': 'Applying Visit...',
-  'bind-account': 'Bind with a Existence Account',
+  'bind-account': 'Bind with an Existence Account',
+  'bind-account-title': 'You will need an Account Identifier',
+  'bind-account-subtitle':
+      'You can find it on other devices, Seafood Crossing -> Account -> Account Identifier.',
   'create-destination': 'Create New Destination',
   'description': 'Description',
   'description-hint': 'More information about this trip',

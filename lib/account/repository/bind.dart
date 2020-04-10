@@ -24,13 +24,15 @@ Future<BindAccountRepositoryResponse> bindAccountRepository({
   final DeviceInfo deviceInfo = await DeviceInfo.gather();
   final PackageInfo packageInfo = await PackageInfo.fromPlatform();
 
+  final String parsedIdentifier = identifier.toLowerCase();
+
   try {
     Response response = await Dio(dioBaseOptions).post(
       target,
       data: {
         'version': packageInfo.version,
         'device': deviceInfo.toMap(),
-        'identifier': identifier,
+        'identifier': parsedIdentifier,
       },
     );
 

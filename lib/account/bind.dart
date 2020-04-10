@@ -69,7 +69,15 @@ class _BindAccountState extends State<BindAccount> {
             return this._buildRequiredMessage(context, identifierFieldName);
           }
 
-          return null;
+          final String removeDashed = value.replaceAll('-', '');
+          final RegExp pattern = RegExp(r'^[A-Za-z0-9]{33}$');
+
+          if (pattern.hasMatch(removeDashed)) {
+            return null;
+          }
+
+          return this
+              ._buildPatternNotMatchedMessage(context, identifierFieldName);
         },
       ),
     ];
@@ -93,6 +101,14 @@ class _BindAccountState extends State<BindAccount> {
     return coreLocalizations.getString(fieldName) +
         ' ' +
         coreLocalizations.getString('is-required');
+  }
+
+  String _buildPatternNotMatchedMessage(
+      BuildContext context, String fieldName) {
+    final CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
+    return coreLocalizations.getString(fieldName) +
+        ' ' +
+        coreLocalizations.getString('has-invalid-pattern');
   }
 
   Future<void> _submit() async {

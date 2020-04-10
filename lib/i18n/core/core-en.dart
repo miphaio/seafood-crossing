@@ -65,6 +65,8 @@ const Map<String, String> coreLocalizationEnglish = {
   'title-hint': 'Purpose of this trip',
   'travel': 'Travel',
   'unable-to-launch-url': 'Unable to Launch Url',
+  'unable-to-launch-url-content':
+      'Please check your device setting or contact us for help.',
   'version-number': 'Version',
   'visit': 'Visit',
 };

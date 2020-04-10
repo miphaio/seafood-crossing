@@ -58,6 +58,7 @@ const Map<String, String> coreLocalizationChinese = {
   'title-hint': '旅行的原因',
   'travel': '旅行',
   'unable-to-launch-url': '无法访问链接',
+  'unable-to-launch-url-content': '请检查你的设备设置，或者联系我们来取得帮助。',
   'version-number': '版本',
   'visit': '访问',
 };

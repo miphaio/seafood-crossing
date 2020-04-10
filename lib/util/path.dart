@@ -7,7 +7,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 String getPath() {
   if (kReleaseMode) {
-    return 'https://7x9f1hfqp0.execute-api.us-east-1.amazonaws.com/prod';
+    return 'https://seafood-crossing.api.mipha.io';
   }
   if (Platform.isAndroid) {
     return 'http://10.0.2.2:4000/devl';
@@ -28,8 +28,8 @@ Future<void> launchUrl(BuildContext context, String url) async {
       builder: (BuildContext context) {
         return AlertDialog(
           title: CoreLocalizations.of(context).getText('unable-to-launch-url'),
-          // spell-checker:disable-next-line
-          content: Text('nocookie.net'),
+          content: CoreLocalizations.of(context)
+              .getText('unable-to-launch-url-content'),
         );
       },
     );

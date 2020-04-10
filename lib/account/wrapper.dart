@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:seafood_crossing/account/bind.dart';
 import 'package:seafood_crossing/account/initialize.dart';
 import 'package:seafood_crossing/i18n/core/localizations.dart';
 import 'package:seafood_crossing/util/user-info.dart';
@@ -59,6 +60,19 @@ class _AccountWrapperState extends State<AccountWrapper> {
               MaterialPageRoute(
                 builder: (BuildContext context) {
                   return InitializeAccount();
+                },
+              ),
+            ).whenComplete(this._checkUserInfo);
+          },
+        ),
+        FlatButton(
+          child: CoreLocalizations.of(context).getText('bind-account'),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) {
+                  return BindAccount();
                 },
               ),
             ).whenComplete(this._checkUserInfo);

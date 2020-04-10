@@ -2,6 +2,8 @@ const Map<String, String> coreLocalizationEnglish = {
   'about': 'About',
   'access-code': 'Access Code',
   'access-code-hint': 'Access Code toward your island',
+  'access-code-helper':
+      'Access Code should be 5 characters long includes letters and numbers',
   'account': 'Account',
   'account-identifier': 'Account Identifier',
   'account-identifier-extend':

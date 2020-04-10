@@ -2,6 +2,7 @@ const Map<String, String> coreLocalizationChinese = {
   'about': '关于',
   'access-code': '密码',
   'access-code-hint': '链接岛屿的密码',
+  'access-code-helper': '密码应该是五位数字和字母的组合',
   'account': '账户',
   'account-identifier': '账户识别码',
   'account-identifier-extend': '你可以用此识别码在其他设备上使用你的账户',

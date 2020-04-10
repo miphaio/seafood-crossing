@@ -8,14 +8,18 @@ const Map<String, String> coreLocalizationEnglish = {
   'account-identifier': 'Account Identifier',
   'account-identifier-extend':
       'You can use this identifier to use same account on your other devices',
+  'account-identifier-not-exist':
+      'This device does not bind with any account identifier',
   'apply-visit': 'Apply Visit',
   'applying-visit': 'Applying Visit...',
+  'bind-account': 'Bind with a Existence Account',
   'create-destination': 'Create New Destination',
   'description': 'Description',
   'description-hint': 'More information about this trip',
   'destination': 'Destination',
   'first-time-using-title': 'Seems you are just start using seafood crossing.',
-  'first-time-using-subtitle': 'Click <Start Using> to start!',
+  'first-time-using-subtitle':
+      'Click <Start Using> to start fill some simple information!',
   'fish': 'Fish',
   'foodex': 'Foodex',
   'github': 'Github',
@@ -26,6 +30,7 @@ const Map<String, String> coreLocalizationEnglish = {
       'We are not going to collect any information about you, you just need to enter your Nintendo Switch friend code to get started.',
   'insect': 'Insect',
   'is-required': 'is required',
+  'loading': 'Loading',
   'mode': 'Mode',
   'mode-development': 'Development',
   'mode-release': 'Release',

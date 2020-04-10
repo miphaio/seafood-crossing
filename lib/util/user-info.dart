@@ -12,13 +12,6 @@ class UserInfo {
         preference.getString(_Seafood_Crossing_Identifier);
     final String accountId = preference.getString(_Seafood_Crossing_Account_Id);
 
-    if (identifier == null) {
-      return UserInfo(
-        identifier: 'new-user',
-        accountId: accountId,
-      );
-    }
-
     return UserInfo(
       identifier: identifier,
       accountId: accountId,

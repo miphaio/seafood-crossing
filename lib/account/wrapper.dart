@@ -45,6 +45,7 @@ class _AccountWrapperState extends State<AccountWrapper> {
       children: <Widget>[
         Card(
           child: ListTile(
+            isThreeLine: true,
             leading: Icon(Icons.info),
             title:
                 CoreLocalizations.of(context).getText('first-time-using-title'),

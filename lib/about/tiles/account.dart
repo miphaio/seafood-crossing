@@ -9,6 +9,7 @@ class AccountAboutTile extends StatefulWidget {
 
 class _AccountAboutTileState extends State<AccountAboutTile> {
   String _identifier;
+  bool _gathered = false;
 
   @override
   void initState() {
@@ -24,18 +25,50 @@ class _AccountAboutTileState extends State<AccountAboutTile> {
         leading: Icon(Icons.outlined_flag),
         title: coreLocalizations.getText('account'),
         children: <Widget>[
-          ListTile(
-            dense: true,
-            isThreeLine: true,
-            title: coreLocalizations.getText('account-identifier'),
-            subtitle: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(this._identifier != null ? this._identifier : '...'),
-                coreLocalizations.getText('account-identifier-extend'),
-              ],
-            ),
-          ),
+          this._buildAccountIdentifier(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildAccountIdentifier() {
+    final CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
+
+    if (!this._gathered) {
+      return ListTile(
+        dense: true,
+        title: coreLocalizations.getText('account-identifier'),
+        subtitle: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            coreLocalizations.getText('loading'),
+          ],
+        ),
+      );
+    }
+
+    if (this._identifier == null) {
+      return ListTile(
+        dense: true,
+        title: coreLocalizations.getText('account-identifier'),
+        subtitle: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            coreLocalizations.getText('account-identifier-not-exist'),
+          ],
+        ),
+      );
+    }
+
+    return ListTile(
+      dense: true,
+      isThreeLine: true,
+      title: coreLocalizations.getText('account-identifier'),
+      subtitle: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(this._identifier),
+          coreLocalizations.getText('account-identifier-extend'),
         ],
       ),
     );
@@ -44,6 +77,7 @@ class _AccountAboutTileState extends State<AccountAboutTile> {
   Future<void> _initIdentifier() async {
     UserInfo userInfo = await UserInfo.gather();
     this.setState(() {
+      this._gathered = true;
       this._identifier = userInfo.identifier;
     });
   }

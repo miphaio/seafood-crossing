@@ -7,6 +7,7 @@ Future<String> openInputDialog(
   @required String label,
 }) async {
   String result = '';
+
   return showDialog(
     context: context,
     builder: (BuildContext context) {
@@ -17,8 +18,15 @@ Future<String> openInputDialog(
             new Expanded(
               child: new TextField(
                 autofocus: true,
-                decoration: new InputDecoration(labelText: label),
-                onChanged: (value) => result = value,
+                decoration: new InputDecoration(
+                  labelText: label,
+                ),
+                onChanged: (String value) {
+                  result = value;
+                },
+                onSubmitted: (String value) {
+                  Navigator.of(context).pop(result);
+                },
               ),
             )
           ],

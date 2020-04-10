@@ -105,15 +105,25 @@ class _AddDestinationInformationState extends State<AddDestinationInformation> {
         decoration: InputDecoration(
           labelText: coreLocalizations.getString(accessCodeFieldName),
           hintText: coreLocalizations.getString(accessCodeFieldName + '-hint'),
+          helperText:
+              coreLocalizations.getString(accessCodeFieldName + '-helper'),
         ),
         onSaved: (String value) {
           this._data['accessCode'] = value;
         },
         validator: (String value) {
-          if (value.length > 0) {
+          if (value.length == 0) {
+            return this._buildRequiredMessage(context, accessCodeFieldName);
+          }
+
+          final RegExp pattern = RegExp(r'^[A-Za-z0-9]{5}$');
+
+          if (pattern.hasMatch(value)) {
             return null;
           }
-          return this._buildRequiredMessage(context, accessCodeFieldName);
+
+          return this
+              ._buildPatternNotMatchedMessage(context, accessCodeFieldName);
         },
       ),
     ];
@@ -124,6 +134,14 @@ class _AddDestinationInformationState extends State<AddDestinationInformation> {
     return coreLocalizations.getString(fieldName) +
         ' ' +
         coreLocalizations.getString('is-required');
+  }
+
+  String _buildPatternNotMatchedMessage(
+      BuildContext context, String fieldName) {
+    final CoreLocalizations coreLocalizations = CoreLocalizations.of(context);
+    return coreLocalizations.getString(fieldName) +
+        ' ' +
+        coreLocalizations.getString('has-invalid-pattern');
   }
 
   Widget _buildSubmitButton() {

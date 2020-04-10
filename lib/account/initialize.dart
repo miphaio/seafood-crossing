@@ -41,7 +41,7 @@ class _InitializeAccountState extends State<InitializeAccount> {
                     children: this._buildFormFields(context),
                   ),
                 ),
-                this._buildSubmitButton(),
+                this._buildSubmitButton(context),
               ],
             ),
           ),
@@ -82,7 +82,7 @@ class _InitializeAccountState extends State<InitializeAccount> {
     ];
   }
 
-  Widget _buildSubmitButton() {
+  Widget _buildSubmitButton(BuildContext context) {
     if (this._loading) {
       return RaisedButton(
         child: CoreLocalizations.of(context).getText('submitting'),

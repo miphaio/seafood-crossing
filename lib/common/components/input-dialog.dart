@@ -28,7 +28,7 @@ Future<String> openInputDialog(
                   Navigator.of(context).pop(result);
                 },
               ),
-            )
+            ),
           ],
         ),
         actions: <Widget>[
